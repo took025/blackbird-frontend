@@ -17,6 +17,7 @@ import {
   styleUrl: "./wizards.component.scss",
 })
 export class WizardsComponent {
+  isBrowser: boolean = false;
   @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
 
   images = [
@@ -84,9 +85,11 @@ export class WizardsComponent {
   autoSlideInterval = 2500; // Interval in milliseconds
   autoSlideTimer: any;
 
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
   ngAfterViewInit(): void {
-    afterNextRender(() => {
+    if (this.isBrowser) {
       if (isPlatformBrowser(PLATFORM_ID)) {
         this.calculateSlideWidth();
         this.calculateMaxIndex();
@@ -95,62 +98,62 @@ export class WizardsComponent {
           this.next();
         }, this.autoSlideInterval);
       }
-    });
+    }
   }
 
   @HostListener("window:resize", ["$event"])
   onResize(event: Event): void {
     console.log("test");
-    if (isPlatformBrowser(PLATFORM_ID)) {
+    if (this.isBrowser) {
       this.calculateSlideWidth();
       this.calculateMaxIndex();
     }
   }
 
   calculateSlideWidth(): void {
-    afterNextRender(() => {
+    if (this.isBrowser) {
       const containerWidth = this.carousel.nativeElement.clientWidth;
       this.slideWidth = containerWidth / this.images.length;
-    });
+    }
   }
 
   calculateMaxIndex(): void {
-    afterNextRender(() => {
+    if (this.isBrowser) {
       this.maxIndex = this.images.length - 1;
-    });
+    }
   }
 
   next(): void {
     console.log(this.currentIndex, this.maxIndex);
-    afterNextRender(() => {
+    if (this.isBrowser) {
       if (this.currentIndex <= this.maxIndex) {
         this.currentIndex++;
       } else {
         this.currentIndex = 0;
       }
       this.showSlides();
-    });
+    }
   }
 
   prev(): void {
-    afterNextRender(() => {
+    if (this.isBrowser) {
       if (this.currentIndex > 0) {
         this.currentIndex--;
       } else {
         this.currentIndex = this.maxIndex;
       }
       this.showSlides();
-    });
+    }
   }
 
   showSlides(): void {
-    afterNextRender(() => {
+    if (this.isBrowser) {
       if (isPlatformBrowser(PLATFORM_ID)) {
         const slidePosition = -this.currentIndex * this.slideWidth;
         this.carousel.nativeElement.style.transition = "transform 0.5s linear";
         this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
       }
-    });
+    }
   }
 
   // getTransformValue(): string {

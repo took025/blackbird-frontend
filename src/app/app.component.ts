@@ -27,6 +27,7 @@ import { WizardsComponent } from "./components/wizards/wizards.component";
 })
 export class AppComponent {
   scrollEvent: Event | null = null;
+  isBrowser: boolean = false;
   items: { id: number; text: string }[] = [
     {
       id: 1,
@@ -55,6 +56,7 @@ export class AppComponent {
   ];
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
     // old
     // if (isPlatformBrowser(platformId)) {
     //   console.log('id' , platformId);
@@ -66,9 +68,8 @@ export class AppComponent {
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(event: Event) {
-    afterNextRender(() => {
-      // Emit scroll event globally
+    if (this.isBrowser) {
       window.dispatchEvent(new CustomEvent("customScroll", { detail: event }));
-    });
+    }
   }
 }
