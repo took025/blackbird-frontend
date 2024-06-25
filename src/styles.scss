@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+body {
+    margin: 0;
+    padding-top: 121px;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    height: 44px;
+    padding: 6px 25px 0 25px;
+    border-radius: 45px;
+    display: flex;
+
+    &.btn-secondary {
+        border: 1px solid #484848;
+    }
+}
+
+.default__grid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
