@@ -1,107 +1,107 @@
 <header class="header">
-    <nav class="navigation flex justify-between w-full">
-        <div class="left__side">
-            <a [routerLink]="[ '/' ]">
-                <img src="../assets/img/logo.svg" alt="">
-            </a>
-        </div>
-        <div class="right__side flex items-center">
-            <div>En </div>
-            <div class="mx-[12px]">
-                <button class="btn btn-secondary">contact us</button>
-            </div>
-            <div class="menu__item cursor-pointer">
-                <img src="../assets/img/menu-icon.svg" alt="">
-            </div>
-        </div>
-    </nav>
+  <nav class="navigation flex justify-between w-full">
+    <div class="left__side">
+      <a [routerLink]="[ '/' ]">
+        <img src="../assets/img/logo.svg" alt="">
+      </a>
+    </div>
+    <div class="right__side flex items-center">
+      <div>En </div>
+      <div class="mx-[12px]">
+        <button class="btn btn-secondary">contact us</button>
+      </div>
+      <div class="menu__item cursor-pointer">
+        <img src="../assets/img/menu-icon.svg" alt="">
+      </div>
+    </div>
+  </nav>
 </header>
 
 <section class="banner-section">
-    <div class="banner__content default__grid">
-        <img src="../assets/img/banner-text.svg" alt="">
-        <h3 class="text-2xl	">[Your Local Business Partner]</h3>
-    </div>
+  <div class="banner__content default__grid">
+    <img src="../assets/img/banner-text.svg" alt="">
+    <h3 class="text-2xl	">[Your Local Business Partner]</h3>
+  </div>
 </section>
 <section class="buisness__section h-100">
-    <div class="scrollable-container">
-        buisnes here
-        <!-- <app-sticky-component></app-sticky-component> -->
-    </div>
+  <div class="scrollable-container">
+    buisnes here
+    <!-- <app-sticky-component></app-sticky-component> -->
+  </div>
 </section>
 <section class="projects__section h-100">
-    <div class="scrollable-container">
-        buisnes here
-        <app-sticky-component></app-sticky-component>
-    </div>
+  <div class="scrollable-container">
+    buisnes here
+    <app-sticky-component></app-sticky-component>
+  </div>
 </section>
 <section class="trust__section h-100">
-    <div class="flex items-stretch gap-24 center">
-        <div class="left__side flex flex-col w-2/4 justify-between">
-            <div class="texts">
-                <p class="text-3xl">The <strong> trust</strong> already gained with</p>
-                <p class="text-xl mt-[60px] mb-[16px]">"Ever since I started using my daily workflow has become so much
-                    smoother. The
-                    intuitive
-                    design and powerful
-                    features make “</p>
-                <p class="text-xs">CEO at Samsung</p>
-            </div>
-            <div class="donwside__content">
-                <img src="../assets/img/trust-left.svg" alt="">
-                <span class="text-sm">Success case [Gorenje]</span>
-            </div>
+  <div class="flex items-stretch gap-24 center">
+    <div class="left__side flex flex-col w-2/4 justify-between">
+      <div class="texts">
+        <p class="text-3xl">The <strong> trust</strong> already gained with</p>
+        <p class="text-xl mt-[60px] mb-[16px]">"Ever since I started using my daily workflow has become so much
+          smoother. The
+          intuitive
+          design and powerful
+          features make “</p>
+        <p class="text-xs">CEO at Samsung</p>
+      </div>
+      <div class="donwside__content">
+        <img src="../assets/img/trust-left.svg" alt="">
+        <span class="text-sm">Success case [Gorenje]</span>
+      </div>
 
-        </div>
-        <div class="right__side w-2/4">
-            <img src="../assets/img/trust.svg" alt="">
-            <span class="text-sm">Success case [Samsung]</span>
-        </div>
     </div>
+    <div class="right__side w-2/4">
+      <img src="../assets/img/trust.svg" alt="">
+      <span class="text-sm">Success case [Samsung]</span>
+    </div>
+  </div>
 </section>
 <section class="animation__section overflow-hidden">
-    <div class="marquee-container">
-        <div class="marquee">
-            <div class="marquee-content text-7xl flex" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
+  <div class="marquee-container">
+    <div class="marquee">
+      <div class="marquee-content text-7xl flex" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
 
-            <div class="marquee-content text-7xl flex" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
-        </div>
+      <div class="marquee-content text-7xl flex" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
     </div>
-    <div class="marquee-container">
-        <div class="marquee marquee-reverse">
-            <div class="marquee-content text-7xl" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
-            <div class="marquee-content text-7xl" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
-        </div>
+  </div>
+  <div class="marquee-container">
+    <div class="marquee marquee-reverse">
+      <div class="marquee-content text-7xl" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
+      <div class="marquee-content text-7xl" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
     </div>
-    <div class="marquee-container">
-        <div class="marquee">
-            <div class="marquee-content text-7xl" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
+  </div>
+  <div class="marquee-container">
+    <div class="marquee">
+      <div class="marquee-content text-7xl" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
 
-            <div class="marquee-content text-7xl" *ngFor="let item of items">
-                {{ item.text }}
-                <img src="../assets/img/plus.svg" alt="">
-            </div>
-        </div>
+      <div class="marquee-content text-7xl" *ngFor="let item of items">
+        {{ item.text }}
+        <img src="../assets/img/plus.svg" alt="">
+      </div>
     </div>
+  </div>
 </section>
 <section class="wizards__section overflow-hidden">
-    <div class="">
-        <app-wizards></app-wizards>
-    </div>
+  <div class="">
+    <app-wizards></app-wizards>
+  </div>
 </section>
 <router-outlet />

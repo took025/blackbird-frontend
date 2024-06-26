@@ -17,7 +17,6 @@ import {
   styleUrl: "./wizards.component.scss",
 })
 export class WizardsComponent {
-  isBrowser: boolean = false;
   @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
 
   images = [
@@ -78,6 +77,7 @@ export class WizardsComponent {
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
   ];
+  isBrowser: boolean = false;
   currentIndex = 0;
   slidesToShow = 3; // Number of slides to show at once
   slideWidth!: number;
@@ -90,7 +90,7 @@ export class WizardsComponent {
   }
   ngAfterViewInit(): void {
     if (this.isBrowser) {
-      if (isPlatformBrowser(PLATFORM_ID)) {
+      if (this.isBrowser) {
         this.calculateSlideWidth();
         this.calculateMaxIndex();
         this.showSlides();
@@ -148,7 +148,7 @@ export class WizardsComponent {
 
   showSlides(): void {
     if (this.isBrowser) {
-      if (isPlatformBrowser(PLATFORM_ID)) {
+      if (this.isBrowser) {
         const slidePosition = -this.currentIndex * this.slideWidth;
         this.carousel.nativeElement.style.transition = "transform 0.5s linear";
         this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
