@@ -11,7 +11,12 @@ module.exports = {
                 '20px': '20px',
                 '20px': '20px',
                 '24px': '24px',
+                '30px': '30px',
                 '60px': '60px',
+                '75px': '75px',
+                '95px': '95px',
+                '100px': '100px',
+                '160px': '160px',
             },
             // margin: {
             //   '5px': '5px',
@@ -21,6 +26,9 @@ module.exports = {
             //   '20px': '20px',
             // }
         },
+        borderRadius: {
+            'rounded-75': '75pxpx',
+        }
     },
     plugins: [],
 }

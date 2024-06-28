@@ -1,0 +1,19 @@
+/* footer.component.css */
+.footer__up {
+    height: 300px;
+    background-image: url("../../../assets/img/footer.png");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: -150px;
+    transition: 0.3s ease;
+    // background-attachment: fixed;
+    // background-position: center;
+    // background-size: 400px;
+}
+.footer {
+    transition: 0.3s ease;
+    &.rounded {
+        border-top-left-radius: 75px;
+        border-top-right-radius: 75px;
+    }
+}

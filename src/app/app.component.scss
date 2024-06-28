@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 121px;
     display: flex;
     align-items: center;
     background-color: #f8f8f8;
@@ -14,12 +13,26 @@
 
         .right__side {
             display: flex;
+            height: 121px;
+        }
+        .left__side {
+            // height: 100vh;
+            display: flex;
+            align-items: center;
+            transition: height 2s ease-in-out;
+        }
+    }
+    &.in-view {
+        .navigation .left__side {
+            // transition-delay: 0.1s;
+            height: 121px;
         }
     }
 }
 
 .banner-section {
-    min-height: calc(100vh - 121px);
+    min-height: 100vh;
+    max-height: 100vh;
     background-color: #dddddd;
     background-image: url(../assets/img/banner.svg);
     background-repeat: no-repeat;
@@ -28,17 +41,48 @@
     align-items: end;
     padding-bottom: 5%;
     .banner__content {
-        max-width: 70%;
+        // min-height: 100vh;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        width: 100%;
+        .default__grid {
+            max-width: 70%;
+        }
+        .right__side {
+            display: none;
+            margin-top: 25px;
+        }
+        img {
+            max-height: 20000px;
+        }
     }
-}
-
-.h-100 {
-    min-height: 100vh;
-}
-.center {
-    display: flex;
-    max-width: 1320px;
-    margin: 0 auto;
+    &.compress {
+        background-image: initial;
+        // transition-delay: 0.5s;
+        padding-bottom: 0px;
+        transition: 0.8s;
+        min-height: 121px;
+        max-height: 121px;
+        .navigation .left__side {
+            // transition-delay: 0.1s;
+            height: 121px;
+        }
+        .banner__content {
+            // transition-delay: 0.5s;
+            // align-items: center;
+            img {
+                transition: 0.4s;
+                max-height: 80px;
+            }
+            .right__side {
+                display: flex;
+            }
+        }
+        .under__text {
+            opacity: 0;
+        }
+    }
 }
 
 .marquee {
@@ -69,6 +113,34 @@
     img {
         display: inline-block;
     }
+}
+
+.hover__block {
+    position: relative;
+    .hover__content {
+        position: absolute;
+        z-index: 12;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        display: flex;
+        height: 30px;
+        background: black;
+        align-items: center;
+        padding: 0 17px;
+        opacity: 0;
+        transition: 0.6s ease-in-out;
+    }
+    &:hover {
+        .hover__content {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+.buisness__section {
+    background-color: #f8f8f8;
 }
 .animation__section {
     min-height: 520px;

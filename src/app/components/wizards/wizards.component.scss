@@ -27,6 +27,7 @@
 }
 .carousel-inner {
     transition: transform 0.5s ease; /* Smooth transition over 0.5 seconds */
+    // animation: marquee 10s linear infinite;
 
     // display: grid;
     // grid-template-columns: repeat(3, calc(33%));
@@ -37,6 +38,41 @@
     .slide {
         display: flex;
         flex: 0 0 33.3333%;
-        padding-right: 5px;
+        // padding-right: 5px;
+    }
+}
+.wizards-container {
+    position: relative;
+    &::after {
+        content: "";
+        pointer-events: none;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 4px);
+        border-top: 1px dashed #1c1c1cb2;
+        border-bottom: 1px dashed #1c1c1cb2;
+        position: absolute;
+    }
+    border-top: 1px dashed #1c1c1cb2;
+    border-bottom: 1px dashed #1c1c1cb2;
+    .buttons {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        background: white;
+        z-index: 111;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }

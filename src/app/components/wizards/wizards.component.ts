@@ -6,7 +6,6 @@ import {
   HostListener,
   Inject,
   PLATFORM_ID,
-  afterNextRender,
 } from "@angular/core";
 
 @Component({
@@ -70,7 +69,7 @@ export class WizardsComponent {
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 6,
+      id: 7,
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
@@ -84,6 +83,7 @@ export class WizardsComponent {
   maxIndex!: number;
   autoSlideInterval = 2500; // Interval in milliseconds
   autoSlideTimer: any;
+  isReversing: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -95,15 +95,17 @@ export class WizardsComponent {
         this.calculateMaxIndex();
         this.showSlides();
         setInterval(() => {
-          this.next();
+          // this.next();
         }, this.autoSlideInterval);
       }
     }
+    // const scroller = document.querySelector("#scroller");
+    // const output = document.querySelector("#output");
   }
 
   @HostListener("window:resize", ["$event"])
   onResize(event: Event): void {
-    console.log("test");
+    // console.log("test");
     if (this.isBrowser) {
       this.calculateSlideWidth();
       this.calculateMaxIndex();
@@ -113,61 +115,85 @@ export class WizardsComponent {
   calculateSlideWidth(): void {
     if (this.isBrowser) {
       const containerWidth = this.carousel.nativeElement.clientWidth;
-      this.slideWidth = containerWidth / this.images.length;
+      // console.log(this.carousel.nativeElement);
+
+      // this.slideWidth = window.innerWidth / this.images.length;
+      this.slideWidth = containerWidth / this.slidesToShow;
     }
   }
 
   calculateMaxIndex(): void {
     if (this.isBrowser) {
-      this.maxIndex = this.images.length - 1;
+      this.maxIndex = this.images.length - 3;
     }
   }
 
-  next(): void {
-    console.log(this.currentIndex, this.maxIndex);
+  next(isClicking?: boolean): void {
     if (this.isBrowser) {
-      if (this.currentIndex <= this.maxIndex) {
+      // if (isClicking) {
+      //   this.currentIndex++;
+      // }
+      if (this.currentIndex < this.maxIndex && !this.isReversing) {
         this.currentIndex++;
       } else {
-        this.currentIndex = 0;
+        if (!isClicking) {
+          this.isReversing = true;
+          // this.currentIndex = 0;
+          this.prev();
+          this.showSlides(true);
+          // return;
+        }
       }
-      this.showSlides();
+      this.showSlides(isClicking);
     }
   }
 
-  prev(): void {
+  prev(isClicking?: boolean): void {
     if (this.isBrowser) {
+      // if (isClicking) {
+      //   this.currentIndex--;
+      // }
       if (this.currentIndex > 0) {
         this.currentIndex--;
       } else {
-        this.currentIndex = this.maxIndex;
+        if (!isClicking) {
+          this.isReversing = false;
+          this.next();
+          // this.currentIndex = this.maxIndex;
+        }
       }
-      this.showSlides();
+      this.showSlides(isClicking);
     }
   }
 
-  showSlides(): void {
+  showSlides(isClicking?: boolean): void {
     if (this.isBrowser) {
-      if (this.isBrowser) {
-        const slidePosition = -this.currentIndex * this.slideWidth;
-        this.carousel.nativeElement.style.transition = "transform 0.5s linear";
-        this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
-      }
+      let slidePosition = 0;
+      const oneElementWidth =
+        this.carousel.nativeElement.clientWidth / this.slidesToShow;
+      // if (reverse) {
+      //   slidePosition = -this.currentIndex * (oneElementWidth - 6);
+      // } else {
+      slidePosition = -this.currentIndex * oneElementWidth;
+      // }
+      // this.carousel.nativeElement.style.transition = "transform 6s linear";
+      this.carousel.nativeElement.style.transition = "transform 0.5s linear";
+      this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
     }
   }
 
-  // getTransformValue(): string {
-  //   const styles = window.getComputedStyle(this.carousel.nativeElement);
-  //   const transformString = styles.getPropertyValue("transform");
-  //   // Extract translateX and translateY values from transform matrix
-  //   const matrix = transformString.match(/^matrix\((.+)\)$/);
-  //   if (matrix) {
-  //     const matrixValues = matrix[1].split(", ");
-  //     const translateX = parseFloat(matrixValues[4]);
-  //     const translateY = parseFloat(matrixValues[5]);
-  //     return `${translateX}`;
-  //   } else {
-  //     return "No transform or unsupported transform format";
-  //   }
-  // }
+  getTransformValue(): string {
+    const styles = window.getComputedStyle(this.carousel.nativeElement);
+    const transformString = styles.getPropertyValue("transform");
+    // Extract translateX and translateY values from transform matrix
+    const matrix = transformString.match(/^matrix\((.+)\)$/);
+    if (matrix) {
+      const matrixValues = matrix[1].split(", ");
+      const translateX = parseFloat(matrixValues[4]);
+      const translateY = parseFloat(matrixValues[5]);
+      return `${translateX}`;
+    } else {
+      return "No transform or unsupported transform format";
+    }
+  }
 }

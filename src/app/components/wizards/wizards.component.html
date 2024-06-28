@@ -1,17 +1,38 @@
 <div class="wizards-content">
-    <h1>Our Wizards...</h1>
-    <div class="wizards-container">
-
+    <div class="center py-[40px]">
+        <h1 class="text-3xl">Our <strong>Wizards...</strong></h1>
+    </div>
+    <div class="wizards-container py-[75px] mb-[25px]">
         <div class="carousel flex" #carousel>
-            <div class="carousel-inner flex" [style.width.px]="slideWidth * images.length">
-                <div class="slide" *ngFor="let slide of images" [style.width.px]="slideWidth">
-                    <img [src]=" slide.image" alt="Slide">
+            <!-- [style.width.px]="slideWidth * images.length" -->
+            <div class="carousel-inner flex">
+                <div class="slide flex items-stretch" *ngFor="let slide of images">
+                    <!-- <img [src]=" slide.image" alt="Slide" class="w-2/3"> -->
+                    <img src="../../../assets/img/wizard.svg" alt="Slide" class="w-2/3">
+                    <div class="right__side flex flex-col justify-between pl-[16px]">
+                        <span>0{{slide.id + 1}} </span>
+                        <div class="flex-col flex">
+                            <p class="text-xl">
+                                {{slide.position}}
+                            </p>
+                            <span>
+                                {{slide.name}}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <button (click)="prev()">Prev</button>
-        <button (click)="next()">Next</button>
+        <div class="center relative">
+            <div class="buttons">
+                <button class="mr-[5px]" (click)="prev(true)">
+                    <img src="../../../assets/img/prev.svg" alt="">
+                </button>
+                <button (click)="next(true)">
+                    <img src="../../../assets/img/next.svg" alt="">
+                </button>
+            </div>
+        </div>
 
     </div>
 </div>

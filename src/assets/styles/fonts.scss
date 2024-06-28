@@ -1,0 +1,25 @@
+// .font {
+//   @each $font-family in $font-families {
+//     &-#{$font-family} {
+//       font-family: $font-family;
+//     }
+//   }
+// }
+// @import "../styles/";
+@mixin font-face($name, $file) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url("../fonts/#{$file}.ttf") format("truetype");
+    }
+}
+@include font-face("Couturier-Black", "Couturier-Black");
+@include font-face("Couturier-BlackIt", "Couturier-BlackIt");
+@include font-face("Couturier-Bold", "Couturier-Bold");
+@include font-face("Couturier-BoldIt", "Couturier-BoldIt");
+@include font-face("Couturier-Regular", "Couturier-Regular");
+@include font-face("Couturier-RegularIt", "Couturier-RegularIt");
+@include font-face("Couturier-SemiBold", "Couturier-SemiBold");
+@include font-face("Couturier-SemiBoldIt", "Couturier-SemiBoldIt");
+@include font-face("Couturier-SemiBoldIt", "Couturier-SemiBoldIt");
+
+// @include font-face("AdjaraMontPro-SemiBold", "AdjaraMontPro-SemiBold");
