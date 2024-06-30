@@ -34,23 +34,16 @@ export class FooterComponent {
     if (this.isBrowser) {
       const footerPosition = this.el.nativeElement.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
-
-      // Check if the footer is in the viewport
       if (footerPosition <= windowHeight && footerPosition >= 0) {
-        // Calculate the scroll percentage within the footer
         const scrollTop = window.scrollY;
         const footerHeight = this.el.nativeElement.offsetHeight;
         const documentHeight = document.documentElement.scrollHeight;
         const footerScrollPercentage =
           (scrollTop + windowHeight - documentHeight + footerHeight) /
           footerHeight;
-
-        // Adjust the background size based on the scroll percentage
-        this.backgroundSize = 200 + footerScrollPercentage * 600 + "px";
-        // console.log(this.backgroundSize);
+        this.backgroundSize = 180 + footerScrollPercentage * 300 + "px";
       } else {
-        // Reset the background size when the footer is not in view
-        this.backgroundSize = "811";
+        this.backgroundSize = "400px";
       }
     }
   }

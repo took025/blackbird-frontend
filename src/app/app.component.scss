@@ -8,6 +8,7 @@
     background-color: #f8f8f8;
     padding-right: 60px;
     z-index: 100;
+
     .navigation {
         display: flex;
 
@@ -15,6 +16,7 @@
             display: flex;
             height: 121px;
         }
+
         .left__side {
             // height: 100vh;
             display: flex;
@@ -22,6 +24,7 @@
             transition: height 2s ease-in-out;
         }
     }
+
     &.in-view {
         .navigation .left__side {
             // transition-delay: 0.1s;
@@ -40,42 +43,50 @@
     display: flex;
     align-items: end;
     padding-bottom: 100px;
+
     .banner__content {
         // min-height: 100vh;
         display: flex;
         align-items: start;
         justify-content: space-between;
         width: 100%;
+
         .default__grid {
             max-width: 70%;
         }
+
         .right__side {
             opacity: 0;
             pointer-events: none;
             margin-top: 25px;
         }
+
         img {
             max-height: 400px;
             transition: 0.3s;
         }
     }
+
     &.compress {
         .banner__content {
             img {
                 max-height: 80px;
                 transition: 1.9s;
             }
+
             .right__side {
                 transition-delay: 2s;
                 opacity: 1;
                 display: flex;
             }
         }
+
         background-image: initial;
         padding-bottom: 0px;
         transition: 2s;
         min-height: 121px;
         max-height: 121px;
+
         .under__text {
             opacity: 0;
         }
@@ -85,6 +96,7 @@
 .marquee {
     display: inline-block;
     animation: marquee 80s linear infinite;
+
     &.marquee-reverse {
         animation: marquee-reverse 100s linear infinite;
     }
@@ -103,6 +115,7 @@
     color: white;
     font-size: 74px;
     font-size: 4vw;
+
     img {
         display: inline-block;
     }
@@ -110,6 +123,7 @@
 
 .hover__block {
     position: relative;
+
     .hover__content {
         position: absolute;
         z-index: 12;
@@ -124,35 +138,57 @@
         opacity: 0;
         transition: 0.6s ease-in-out;
     }
+    .hover__btn {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        z-index: 11;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+
     &:hover {
         .hover__content {
             width: 100%;
             opacity: 1;
         }
+
+        .hover__btn {
+            opacity: 1;
+
+        }
     }
 }
+
+
 
 .buisness__section {
     background-color: #f8f8f8;
 }
+
 .animation__section {
     min-height: 520px;
     background-color: black;
     padding-top: 130px;
     padding-bottom: 130px;
 }
+
 @keyframes marquee {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
 }
+
 @keyframes marquee-reverse {
     0% {
         transform: translateX(-50%);
     }
+
     100% {
         transform: translateX(0);
     }

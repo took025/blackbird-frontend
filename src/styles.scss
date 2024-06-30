@@ -33,6 +33,16 @@ body {
             margin-right: 8px;
         }
     }
+    &.see__more {
+        background-color: #B80E45;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        border-radius: 2px;
+    }
+    &.md {
+        height: 30px;
+    }
 }
 
 .default__grid {
