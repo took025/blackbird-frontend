@@ -1,4 +1,10 @@
-import { NgFor, isPlatformBrowser } from "@angular/common";
+import {
+  CommonModule,
+  JsonPipe,
+  NgFor,
+  NgIf,
+  isPlatformBrowser,
+} from "@angular/common";
 import {
   Component,
   ElementRef,
@@ -7,69 +13,80 @@ import {
   Inject,
   PLATFORM_ID,
 } from "@angular/core";
+import { CarouselModule, OwlOptions } from "ngx-owl-carousel-o";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @Component({
   selector: "app-wizards",
   standalone: true,
-  imports: [NgFor],
+  imports: [
+    NgFor,
+    NgIf,
+    CarouselModule,
+    JsonPipe,
+    // CommonModule,
+    // NoopAnimationsModule,
+    // BrowserAnimationsModule,
+  ],
   templateUrl: "./wizards.component.html",
   styleUrl: "./wizards.component.scss",
+  animations: [],
 })
 export class WizardsComponent {
   @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
 
   images = [
     {
-      id: 0,
+      id: "0",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 1,
+      id: "1",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 2,
+      id: "2",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 3,
+      id: "3",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 4,
+      id: "4",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 5,
+      id: "5",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 6,
+      id: "6",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
         "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?cs=srgb&dl=bloom-blooming-blossom-462118.jpg&fm=jpg",
     },
     {
-      id: 7,
+      id: "7",
       name: "Tamuna Rostiashvili",
       position: "CEO",
       image:
@@ -84,116 +101,126 @@ export class WizardsComponent {
   autoSlideInterval = 2500; // Interval in milliseconds
   autoSlideTimer: any;
   isReversing: boolean = false;
+  componentView: boolean = false;
 
+  customOptions: OwlOptions = {
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000, // 3 seconds
+    touchDrag: false,
+    pullDrag: false,
+    mouseDrag: false,
+    autoplayHoverPause: false,
+    dots: false,
+    nav: true,
+    navText: [
+      '<span class="custom-nav custom-prev"> <img src="../../../assets/img/prev.svg" alt=""></span>',
+      '<span class="custom-nav custom-next"><img src="../../../assets/img/next.svg" alt=""></span>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      550: {
+        items: 2,
+      },
+      800: {
+        items: 3,
+      },
+    },
+  };
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
   ngAfterViewInit(): void {
-    if (this.isBrowser) {
-      if (this.isBrowser) {
-        this.calculateSlideWidth();
-        this.calculateMaxIndex();
-        this.showSlides();
-        setInterval(() => {
-          // this.next();
-        }, this.autoSlideInterval);
-      }
-    }
-    // const scroller = document.querySelector("#scroller");
-    // const output = document.querySelector("#output");
+    this.images.map((item) => (item.id = String(Number(item.id) + 1)));
+    setTimeout(() => {
+      this.componentView = true;
+    }, 100);
   }
 
-  @HostListener("window:resize", ["$event"])
-  onResize(event: Event): void {
-    // console.log("test");
-    if (this.isBrowser) {
-      this.calculateSlideWidth();
-      this.calculateMaxIndex();
-    }
-  }
+  //   if (this.isBrowser) {
+  //     if (this.isBrowser) {
+  //       this.calculateSlideWidth();
+  //       this.calculateMaxIndex();
+  //       this.showSlides();
+  //       setInterval(() => {}, this.autoSlideInterval);
+  //     }
+  //   }
+  // }
 
-  calculateSlideWidth(): void {
-    if (this.isBrowser) {
-      const containerWidth = this.carousel.nativeElement.clientWidth;
-      // console.log(this.carousel.nativeElement);
+  // @HostListener("window:resize", ["$event"])
+  // onResize(event: Event): void {
+  //   if (this.isBrowser) {
+  //     this.calculateSlideWidth();
+  //     this.calculateMaxIndex();
+  //   }
+  // }
 
-      // this.slideWidth = window.innerWidth / this.images.length;
-      this.slideWidth = containerWidth / this.slidesToShow;
-    }
-  }
+  // calculateSlideWidth(): void {
+  //   if (this.isBrowser) {
+  //     const containerWidth = this.carousel.nativeElement.clientWidth;
+  //     this.slideWidth = containerWidth / this.slidesToShow;
+  //   }
+  // }
 
-  calculateMaxIndex(): void {
-    if (this.isBrowser) {
-      this.maxIndex = this.images.length - 3;
-    }
-  }
+  // calculateMaxIndex(): void {
+  //   if (this.isBrowser) {
+  //     this.maxIndex = this.images.length - 3;
+  //   }
+  // }
 
-  next(isClicking?: boolean): void {
-    if (this.isBrowser) {
-      // if (isClicking) {
-      //   this.currentIndex++;
-      // }
-      if (this.currentIndex < this.maxIndex && !this.isReversing) {
-        this.currentIndex++;
-      } else {
-        if (!isClicking) {
-          this.isReversing = true;
-          // this.currentIndex = 0;
-          this.prev();
-          this.showSlides(true);
-          // return;
-        }
-      }
-      this.showSlides(isClicking);
-    }
-  }
+  // next(isClicking?: boolean): void {
+  //   if (this.isBrowser) {
+  //     if (this.currentIndex < this.maxIndex && !this.isReversing) {
+  //       this.currentIndex++;
+  //     } else {
+  //       if (!isClicking) {
+  //         this.isReversing = true;
+  //         this.prev();
+  //         this.showSlides(true);
+  //       }
+  //     }
+  //     this.showSlides(isClicking);
+  //   }
+  // }
 
-  prev(isClicking?: boolean): void {
-    if (this.isBrowser) {
-      // if (isClicking) {
-      //   this.currentIndex--;
-      // }
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-      } else {
-        if (!isClicking) {
-          this.isReversing = false;
-          this.next();
-          // this.currentIndex = this.maxIndex;
-        }
-      }
-      this.showSlides(isClicking);
-    }
-  }
+  // prev(isClicking?: boolean): void {
+  //   if (this.isBrowser) {
+  //     if (this.currentIndex > 0) {
+  //       this.currentIndex--;
+  //     } else {
+  //       if (!isClicking) {
+  //         this.isReversing = false;
+  //         this.next();
+  //       }
+  //     }
+  //     this.showSlides(isClicking);
+  //   }
+  // }
 
-  showSlides(isClicking?: boolean): void {
-    if (this.isBrowser) {
-      let slidePosition = 0;
-      const oneElementWidth =
-        this.carousel.nativeElement.clientWidth / this.slidesToShow;
-      // if (reverse) {
-      //   slidePosition = -this.currentIndex * (oneElementWidth - 6);
-      // } else {
-      slidePosition = -this.currentIndex * oneElementWidth;
-      // }
-      // this.carousel.nativeElement.style.transition = "transform 6s linear";
-      this.carousel.nativeElement.style.transition = "transform 0.5s linear";
-      this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
-    }
-  }
+  // showSlides(isClicking?: boolean): void {
+  //   if (this.isBrowser) {
+  //     let slidePosition = 0;
+  //     const oneElementWidth =
+  //       this.carousel.nativeElement.clientWidth / this.slidesToShow;
+  //     slidePosition = -this.currentIndex * oneElementWidth;
+  //     this.carousel.nativeElement.style.transition = "transform 0.5s linear";
+  //     this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
+  //   }
+  // }
 
-  getTransformValue(): string {
-    const styles = window.getComputedStyle(this.carousel.nativeElement);
-    const transformString = styles.getPropertyValue("transform");
-    // Extract translateX and translateY values from transform matrix
-    const matrix = transformString.match(/^matrix\((.+)\)$/);
-    if (matrix) {
-      const matrixValues = matrix[1].split(", ");
-      const translateX = parseFloat(matrixValues[4]);
-      const translateY = parseFloat(matrixValues[5]);
-      return `${translateX}`;
-    } else {
-      return "No transform or unsupported transform format";
-    }
-  }
+  // getTransformValue(): string {
+  //   const styles = window.getComputedStyle(this.carousel.nativeElement);
+  //   const transformString = styles.getPropertyValue("transform");
+  //   const matrix = transformString.match(/^matrix\((.+)\)$/);
+  //   if (matrix) {
+  //     const matrixValues = matrix[1].split(", ");
+  //     const translateX = parseFloat(matrixValues[4]);
+  //     const translateY = parseFloat(matrixValues[5]);
+  //     return `${translateX}`;
+  //   } else {
+  //     return "No transform or unsupported transform format";
+  //   }
+  // }
 }

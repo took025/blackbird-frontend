@@ -46,7 +46,7 @@ export class FooterComponent {
           footerHeight;
 
         // Adjust the background size based on the scroll percentage
-        this.backgroundSize = 300 + footerScrollPercentage * 600 + "px";
+        this.backgroundSize = 200 + footerScrollPercentage * 600 + "px";
         // console.log(this.backgroundSize);
       } else {
         // Reset the background size when the footer is not in view

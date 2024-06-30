@@ -44,9 +44,13 @@ body {
 }
 .center {
     display: flex;
-    max-width: 1320px;
+    max-width: 1350px;
     margin: 0 auto;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
 }

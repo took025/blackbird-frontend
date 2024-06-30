@@ -65,6 +65,26 @@
     }
 }
 
+::ng-deep .owl-nav {
+    background-color: initial !important;
+}
+::ng-deep .owl-nav {
+    .custom-next {
+        position: absolute;
+        bottom: -90px;
+        right: 10%;
+        background: white;
+        z-index: 111;
+    }
+    .custom-prev {
+        position: absolute;
+        bottom: -90px;
+        right: calc(10% + 40px);
+        background: white;
+        z-index: 111;
+    }
+}
+
 @keyframes marquee {
     0% {
         transform: translateX(0);
