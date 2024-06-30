@@ -39,7 +39,7 @@
     background-position-x: 100%;
     display: flex;
     align-items: end;
-    padding-bottom: 5%;
+    padding-bottom: 100px;
     .banner__content {
         // min-height: 100vh;
         display: flex;
@@ -50,35 +50,32 @@
             max-width: 70%;
         }
         .right__side {
-            display: none;
+            opacity: 0;
+            pointer-events: none;
             margin-top: 25px;
         }
         img {
-            max-height: 20000px;
+            max-height: 400px;
+            transition: 0.3s;
         }
     }
     &.compress {
-        background-image: initial;
-        // transition-delay: 0.5s;
-        padding-bottom: 0px;
-        transition: 0.8s;
-        min-height: 121px;
-        max-height: 121px;
-        .navigation .left__side {
-            // transition-delay: 0.1s;
-            height: 121px;
-        }
         .banner__content {
-            // transition-delay: 0.5s;
-            // align-items: center;
             img {
-                transition: 0.4s;
                 max-height: 80px;
+                transition: 1.9s;
             }
             .right__side {
+                transition-delay: 2s;
+                opacity: 1;
                 display: flex;
             }
         }
+        background-image: initial;
+        padding-bottom: 0px;
+        transition: 2s;
+        min-height: 121px;
+        max-height: 121px;
         .under__text {
             opacity: 0;
         }
@@ -87,13 +84,9 @@
 
 .marquee {
     display: inline-block;
-    // justify-content: space-around;
-    // animation: marquee 1s linear infinite;
     animation: marquee 80s linear infinite;
-    // width: 200%; /* Adjust this to ensure the entire content fits */
     &.marquee-reverse {
         animation: marquee-reverse 100s linear infinite;
-        // animation: marquee-reverse 1s linear infinite;
     }
 }
 
@@ -155,12 +148,6 @@
     100% {
         transform: translateX(-50%);
     }
-    // 0% {
-    //     transform: translateX(0);
-    // }
-    // 100% {
-    //     transform: translateX(-50%);
-    // }
 }
 @keyframes marquee-reverse {
     0% {

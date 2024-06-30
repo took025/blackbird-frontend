@@ -69,6 +69,12 @@
     background-color: initial !important;
 }
 ::ng-deep .owl-nav {
+    .owl-prev,
+    .owl-next {
+        background-color: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
     .custom-next {
         position: absolute;
         bottom: -90px;
