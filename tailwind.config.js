@@ -28,7 +28,13 @@ module.exports = {
         },
         borderRadius: {
             'rounded-75': '75pxpx',
-        }
+        },
+        colors: {
+            'regal-blue-2': '#243c5a',
+            'black': '#000',
+            'white': '#fff',
+            'purple': '#B80E45',
+          },
     },
     plugins: [],
 }

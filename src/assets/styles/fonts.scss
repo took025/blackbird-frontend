@@ -20,6 +20,33 @@
 @include font-face("Couturier-RegularIt", "Couturier-RegularIt");
 @include font-face("Couturier-SemiBold", "Couturier-SemiBold");
 @include font-face("Couturier-SemiBoldIt", "Couturier-SemiBoldIt");
-@include font-face("Couturier-SemiBoldIt", "Couturier-SemiBoldIt");
+@include font-face("HelveticaNeue", "HelveticaNeue");
 
 // @include font-face("AdjaraMontPro-SemiBold", "AdjaraMontPro-SemiBold");
+.couturier-black {
+    font-family: Couturier-Black;
+}
+.couturier-BlackIt {
+    font-family: Couturier-BlackIt;
+}
+.couturier-Bold   {
+    font-family: Couturier-Bold;
+}
+.couturier-BoldIt{
+    font-family: Couturier-BoldIt;
+}
+.couturier-Regular{
+    font-family: Couturier-Regular;
+}
+.couturier-RegularIt{
+    font-family: Couturier-RegularIt;
+}
+.couturier-SemiBoldIt{
+    font-family: Couturier-SemiBoldIt;
+}
+.counter-black {
+    font-family: Couturier-Black;
+}
+.helvetica {
+    font-family: HelveticaNeue;
+}

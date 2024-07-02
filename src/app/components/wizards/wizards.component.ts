@@ -106,11 +106,11 @@ export class WizardsComponent {
   customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
-    autoplayTimeout: 3000, // 3 seconds
+    autoplayTimeout: 3000,
     touchDrag: false,
     pullDrag: false,
     mouseDrag: false,
-    autoplayHoverPause: false,
+    autoplayHoverPause: true,
     dots: false,
     nav: true,
     navText: [

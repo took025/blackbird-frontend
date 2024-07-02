@@ -8,14 +8,16 @@
             <owl-carousel-o [options]="customOptions">
                 <ng-template *ngFor="let slide of images" carouselSlide [width]="130">
                     <div class="carousel-inner flex">
-                        <img src="../../../assets/img/wizard.svg" alt="Slide" class="w-3/5">
-                        <div class="right__side flex flex-col justify-between pl-[16px]">
-                            <span>0{{slide.id }} </span>
+                        <div class="w-3/5">
+                            <img class="w-full" src="../../../assets/img/wizard.svg" alt="Slide" class="w-3/5">
+                        </div>
+                        <div class="right__side flex flex-col justify-between pl-[16px] w-2/5">
+                            <span class="helvetica">0{{slide.id }} </span>
                             <div class="flex-col flex">
-                                <p class="text-xl">
+                                <p class="text-xl couturier-Regular">
                                     {{slide.position}}
                                 </p>
-                                <span>
+                                <span class="helvetica">
                                     {{slide.name}}
                                 </span>
                             </div>

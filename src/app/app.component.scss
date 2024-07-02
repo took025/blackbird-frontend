@@ -33,66 +33,6 @@
     }
 }
 
-.banner-section {
-    min-height: 100vh;
-    max-height: 100vh;
-    background-color: #dddddd;
-    background-image: url(../assets/img/banner.svg);
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    display: flex;
-    align-items: end;
-    padding-bottom: 100px;
-
-    .banner__content {
-        // min-height: 100vh;
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
-        width: 100%;
-
-        .default__grid {
-            max-width: 70%;
-        }
-
-        .right__side {
-            opacity: 0;
-            pointer-events: none;
-            margin-top: 25px;
-        }
-
-        img {
-            max-height: 400px;
-            transition: 0.3s;
-        }
-    }
-
-    &.compress {
-        .banner__content {
-            img {
-                max-height: 80px;
-                transition: 1.9s;
-            }
-
-            .right__side {
-                transition-delay: 2s;
-                opacity: 1;
-                display: flex;
-            }
-        }
-
-        background-image: initial;
-        padding-bottom: 0px;
-        transition: 2s;
-        min-height: 121px;
-        max-height: 121px;
-
-        .under__text {
-            opacity: 0;
-        }
-    }
-}
-
 .marquee {
     display: inline-block;
     animation: marquee 80s linear infinite;
@@ -145,6 +85,7 @@
         z-index: 11;
         opacity: 0;
         transition: 0.3s;
+        transition-delay: 0.3s;
     }
 
 

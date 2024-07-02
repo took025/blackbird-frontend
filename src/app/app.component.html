@@ -18,24 +18,8 @@
 </header> -->
 <div id="homePage"></div>
 
-
-<section class="banner-section" [ngClass]="{'compress': loaded}">
-  <div class="banner__content ">
-    <div class="default__grid">
-      <img src="../assets/img/banner-text.svg" alt="">
-      <h3 class=" under__text text-2xl	">[Your Local Business Partner]</h3>
-    </div>
-    <div class="right__side flex items-center pr-[60px]">
-      <div>En </div>
-      <div class="mx-[12px]">
-        <button class="btn btn-secondary">contact us</button>
-      </div>
-      <div class="menu__item cursor-pointer">
-        <img src="../assets/img/menu-icon.svg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+<!-- [ngClass]="{'compress': loaded}" -->
+  <app-header/>
 
 <section class="sponsosrs__section h-72 bg-black flex ">
   <div class="scrollable-container center justify-between flex">
@@ -79,13 +63,13 @@
   <div class="flex items-stretch gap-24 center py-[55px]">
     <div class="left__side flex flex-col w-2/4 justify-between">
       <div class="texts">
-        <p class="text-3xl">The <strong> trust</strong> already gained with</p>
-        <p class="text-xl mt-[60px] mb-[16px]">"Ever since I started using my daily workflow has become so much
+        <p class="text-3xl helvetica">The <strong> trust</strong> already gained with</p>
+        <p class="text-xl mt-[60px] mb-[16px] helvetica">"Ever since I started using my daily workflow has become so much
           smoother. The
           intuitive
           design and powerful
           features make “</p>
-        <p class="text-xs">CEO at Samsung</p>
+        <p class="text-xs helvetica">CEO at Samsung</p>
       </div>
       <div class="donwside__content relative">
         <div class="hover__block">
@@ -98,16 +82,16 @@
             </svg>
           </p>
           <div class="hover__btn">
-            <button class="btn see__more">see more</button>
+            <button class="btn see__more helvetica">see more</button>
           </div>
         </div>
-        <span class="text-sm">Success case [Gorenje]</span>
+        <span class="text-sm helvetica">Success case [Gorenje]</span>
       </div>
 
     </div>
     <div class="right__side w-2/4">
       <img src="../assets/img/trust.svg" alt="">
-      <span class="text-sm">Success case [Samsung]</span>
+      <span class="text-sm helvetica">Success case [Samsung]</span>
     </div>
   </div>
 </section>

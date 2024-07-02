@@ -4,16 +4,17 @@
 <div class="footer bg-black py-[70px]" [ngClass]="{'rounded': backgroundSize > '400'}">
     <div class="top__side flex w-full justify-between center">
         <div class="left__side text-white">
-            <p class="footer__Text text-4xl max-w-lg	">
+            <p class="footer__Text text-4xl max-w-lg helvetica">
                 We are here waiting to listen to your queries and ideas
             </p>
             <div class="footer__btns mt-[20px] flex">
                 <a href="mailto:Blackbird@sales.ge" class="btn dark-btn mr-[20px]"><span class="point"></span>
                     {{'Blackbird@sales.ge'}}</a>
-                <a href="tel:+995 111 212 3123" class="btn dark-btn"><span class="point"></span> +995 111 212 3123</a>
+                <a href="tel:+995 111 212 3123" class="btn dark-btn helvetica"><span class="point"></span> +995 111 212
+                    3123</a>
             </div>
         </div>
-        <div class="right__side flex text-white">
+        <div class="right__side flex text-white helvetica">
             <ul class="mr-[50px]">
                 <li class="title mb-[12px]">
                     Services
@@ -82,13 +83,15 @@
                     </clipPath>
                 </defs>
             </svg>
-            <p class="text-white mt-[50px]">
+            <p class="text-white mt-[50px] helvetica">
                 {{currentYear}} All rights reserved
             </p>
         </div>
-        <a href="#homePage" class="right__side flex items-end">
+        <a class="right__side flex items-end">
             <p class="text-white mr-[10px]">en</p>
-            <img src="../../../assets/img/scroll-u.svg" alt="">
+            <div>
+                <img  (click)="gotoTop()" class="scroll__up cursor-pointer" src="../../../assets/img/scroll-u.svg" alt="">
+            </div>
         </a>
     </div>
 </div>

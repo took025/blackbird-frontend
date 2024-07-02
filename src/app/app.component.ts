@@ -15,6 +15,7 @@ import { HeaderShrinkDirective } from "./components/directives/shrink-directive"
 import { InViewService } from "./main-service";
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { HeaderComponent } from "./components/header/header.component";
 
 @Component({
   selector: "app-root",
@@ -30,6 +31,7 @@ import { FooterComponent } from "./components/footer/footer.component";
     ProjectsComponent,
     FooterComponent,
     NgClass,
+    HeaderComponent
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
@@ -38,7 +40,6 @@ import { FooterComponent } from "./components/footer/footer.component";
 export class AppComponent {
   scrollEvent: Event | null = null;
   isBrowser: boolean = false;
-  loaded: boolean = false;
   scrollTopSignal = signal(0);
   items: { id: number; text: string }[] = [
     {
@@ -72,11 +73,7 @@ export class AppComponent {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
-  ngAfterContentInit(): void {
-    setTimeout(() => {
-      this.loaded = true;
-    }, 1000);
-  }
+
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(event: Event) {
