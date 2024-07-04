@@ -1,4 +1,6 @@
-<div appInView class="bg-black projects__content py-[100px]">
+<div appInView class="bg-black projects__content py-[100px]" 
+[ngClass]="{'isInview': isInview}"
+(inView)="onInView($event)">
     <div class="center flex-col justify-between relative opacity-0">
         <div class="top__side flex">
             <div class="left__side">

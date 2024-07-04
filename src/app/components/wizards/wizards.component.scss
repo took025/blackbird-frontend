@@ -25,9 +25,11 @@
     right: 10px;
     // background-image: url("path/to/your/next-arrow.png");
 }
+.carousel {
+    animation: marquee 100s linear infinite;
+}
 .carousel-inner {
     transition: transform 0.5s ease; /* Smooth transition over 0.5 seconds */
-    // animation: marquee 10s linear infinite;
 
     // display: grid;
     // grid-template-columns: repeat(3, calc(33%));
@@ -95,10 +97,25 @@
     0% {
         transform: translateX(0);
     }
-    50% {
-        transform: translateX(-100%);
-    }
+
     100% {
-        transform: translateX(0);
+        transform: translateX(-170%);
     }
 }
+
+// .slider-container {
+//     width: 100%;
+//     overflow: hidden;
+//     position: relative;
+//   }
+  
+//   .slider {
+//     display: flex;
+//     transition: transform 1s linear;
+//   }
+  
+//   .slider-item {
+//     min-width: 33.33%; /* Show 3 items at a time */
+//     box-sizing: border-box;
+//   }
+  

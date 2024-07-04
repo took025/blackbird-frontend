@@ -1,23 +1,26 @@
-<section class="banner-section"  #resizableDiv [ngClass]="{'compress': loaded}">
-    <div class="banner__content ">
-      <div class="default__grid">
-        <div class="overflow-hidden">
-            <img class="hidable__image" src="../assets/img/banner-text.svg" alt="">
-        </div>
-        <h3 class="under__text text-2xl	helvetica">[Your Local Business Partner]</h3>
+<section class="banner-section" #resizableDiv [ngClass]="{'compress': scrollTop , 'opacity-0' : fastScrolling}">
+  <div class="banner__content ">
+    <div class="default__grid">
+      <div class="overflow-hidden">
+        <img class="hidable__image" src="../assets/img/banner-text.svg" alt="">
       </div>
-      <div class="right__side flex items-center pr-[60px]">
-        <div>En </div>
-        <div class="mx-[12px]">
-          <button class="btn btn-secondary helvetica">Contact us</button>
-        </div>
-        <div class="menu__item cursor-pointer">
-          <img src="../assets/img/menu-icon.svg" alt="">
-        </div>
+      <h3 class="under__text text-2xl	helvetica">[Your Local Business Partner]</h3>
+    </div>
+    <div class="right__side flex items-center pr-[60px]">
+      <div>En </div>
+      <div class="mx-[12px]">
+        <button class="btn btn-secondary helvetica">Contact us</button>
+      </div>
+      <div class="menu__item cursor-pointer">
+        <img src="../assets/img/menu-icon.svg" alt="">
       </div>
     </div>
-  </section>
-  <!-- [ngClass]="{'compress': loaded}" -->
-   <!-- <div  class="static__Block"[ngClass]="{'compress': scrollTop > 220}">
+  </div>
+</section>
+<!-- [ngClass]="{'compress': loaded}" -->
+<!-- <div  class="static__Block"[ngClass]="{'compress': scrollTop > 220}">
 
    </div> -->
+<div class="placeholder" [ngClass]="{'compress': scrollTop}">
+
+</div>

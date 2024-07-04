@@ -95,67 +95,67 @@ export class WizardsComponent {
   ];
   isBrowser: boolean = false;
   currentIndex = 0;
-  slidesToShow = 3; // Number of slides to show at once
-  slideWidth!: number;
-  maxIndex!: number;
-  autoSlideInterval = 2500; // Interval in milliseconds
-  autoSlideTimer: any;
-  isReversing: boolean = false;
   componentView: boolean = false;
 
-  customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    touchDrag: false,
-    pullDrag: false,
-    mouseDrag: false,
-    autoplayHoverPause: true,
-    dots: false,
-    nav: true,
-    navText: [
-      '<span class="custom-nav custom-prev"> <img src="../../../assets/img/prev.svg" alt=""></span>',
-      '<span class="custom-nav custom-next"><img src="../../../assets/img/next.svg" alt=""></span>',
-    ],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      550: {
-        items: 2,
-      },
-      800: {
-        items: 3,
-      },
-    },
-  };
+  // slidesToShow = 3; // Number of slides to show at once
+  // slideWidth!: number;
+  // maxIndex!: number;
+  // autoSlideInterval = 2500; // Interval in milliseconds
+  // autoSlideTimer: any;
+  // isReversing: boolean = false;
+
+  // customOptions: OwlOptions = {
+  //   loop: true,
+  //   autoplay: false,
+  //   autoplayTimeout: 3000,
+  //   touchDrag: false,
+  //   pullDrag: false,
+  //   mouseDrag: false,
+  //   autoplayHoverPause: true,
+  //   dots: false,
+  //   nav: true,
+  //   navText: [
+  //     '<span class="custom-nav custom-prev"> <img src="../../../assets/img/prev.svg" alt=""></span>',
+  //     '<span class="custom-nav custom-next"><img src="../../../assets/img/next.svg" alt=""></span>',
+  //   ],
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     550: {
+  //       items: 2,
+  //     },
+  //     800: {
+  //       items: 3,
+  //     },
+  //   },
+  // };
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
   ngAfterViewInit(): void {
-    this.images.map((item) => (item.id = String(Number(item.id) + 1)));
-    setTimeout(() => {
-      this.componentView = true;
-    }, 100);
+
+    if (this.isBrowser) {
+      // this.next()
+      // this.calculateSlideWidth()
+      setTimeout(() => {
+        this.componentView = true;
+      }, 100);
+
+      // this.calculateSlideWidth();
+      // this.calculateMaxIndex();
+      // this.showSlides();
+      // setInterval(() => { }, this.autoSlideInterval);
+    }
   }
 
-  //   if (this.isBrowser) {
-  //     if (this.isBrowser) {
-  //       this.calculateSlideWidth();
-  //       this.calculateMaxIndex();
-  //       this.showSlides();
-  //       setInterval(() => {}, this.autoSlideInterval);
-  //     }
-  //   }
-  // }
-
-  // @HostListener("window:resize", ["$event"])
-  // onResize(event: Event): void {
-  //   if (this.isBrowser) {
-  //     this.calculateSlideWidth();
-  //     this.calculateMaxIndex();
-  //   }
-  // }
+  @HostListener("window:resize", ["$event"])
+  onResize(event: Event): void {
+    if (this.isBrowser) {
+      // this.calculateSlideWidth();
+      // this.calculateMaxIndex();
+    }
+  }
 
   // calculateSlideWidth(): void {
   //   if (this.isBrowser) {
@@ -172,29 +172,14 @@ export class WizardsComponent {
 
   // next(isClicking?: boolean): void {
   //   if (this.isBrowser) {
-  //     if (this.currentIndex < this.maxIndex && !this.isReversing) {
-  //       this.currentIndex++;
-  //     } else {
-  //       if (!isClicking) {
-  //         this.isReversing = true;
-  //         this.prev();
-  //         this.showSlides(true);
-  //       }
-  //     }
-  //     this.showSlides(isClicking);
+  //     this.currentIndex++;
+  //     this.showSlides();
   //   }
   // }
 
   // prev(isClicking?: boolean): void {
   //   if (this.isBrowser) {
-  //     if (this.currentIndex > 0) {
-  //       this.currentIndex--;
-  //     } else {
-  //       if (!isClicking) {
-  //         this.isReversing = false;
-  //         this.next();
-  //       }
-  //     }
+  //     this.currentIndex--;
   //     this.showSlides(isClicking);
   //   }
   // }
@@ -205,7 +190,7 @@ export class WizardsComponent {
   //     const oneElementWidth =
   //       this.carousel.nativeElement.clientWidth / this.slidesToShow;
   //     slidePosition = -this.currentIndex * oneElementWidth;
-  //     this.carousel.nativeElement.style.transition = "transform 0.5s linear";
+  //     this.carousel.nativeElement.style.transition = "transform 5s linear";
   //     this.carousel.nativeElement.style.transform = `translateX(${slidePosition}px)`;
   //   }
   // }

@@ -134,3 +134,55 @@
         transform: translateX(0);
     }
 }
+
+
+
+
+
+
+.scroll__up {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-clip: padding-box;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: border 0.1s ease;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 150;
+
+}
+
+
+/* styles.css */
+.progress-container {
+    width: 72px;
+    height: 72px;
+    position: fixed;
+    bottom: 20px;
+    right: 200px;
+    background-image: url(../assets/img/scroll-u.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.track {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.filled {
+    fill: none;
+    stroke: #3498db;
+    stroke-width: 10;
+    transition: stroke-dasharray 0.3s ease;
+}

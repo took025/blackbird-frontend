@@ -19,7 +19,7 @@
 <div id="homePage"></div>
 
 <!-- [ngClass]="{'compress': loaded}" -->
-  <app-header/>
+<app-header />
 
 <section class="sponsosrs__section h-72 bg-black flex ">
   <div class="scrollable-container center justify-between flex">
@@ -64,7 +64,8 @@
     <div class="left__side flex flex-col w-2/4 justify-between">
       <div class="texts">
         <p class="text-3xl helvetica">The <strong> trust</strong> already gained with</p>
-        <p class="text-xl mt-[60px] mb-[16px] helvetica">"Ever since I started using my daily workflow has become so much
+        <p class="text-xl mt-[60px] mb-[16px] helvetica">"Ever since I started using my daily workflow has become so
+          much
           smoother. The
           intuitive
           design and powerful
@@ -143,6 +144,19 @@
 
 <footer>
   <app-footer></app-footer>
-  <!-- <button (click)="scrollToTop()">scsr</button>
-</footer> -->
+  <div class="scroll__up">
+    <!-- app.component.html -->
+    <div class="progress-container cursor-pointer" (click)="gotoTop()"  *ngIf="scrollPercentage">
+      <svg class="progress-circle" viewBox="0 0 120 120">
+        <!-- Track -->
+        <circle class="track" cx="60" cy="60" r="50"></circle>
+        <!-- Filled progress -->
+        <circle class="filled" cx="60" cy="60" r="50" stroke-dasharray="0 314"
+          [style.strokeDasharray]="(scrollPercentage / 100) * 314 + ' 314'"></circle>
+      </svg>
+    </div>
+
+
+    <!-- <img (click)="gotoTop()" class="scroll__up cursor-pointer" src="../../../assets/img/scroll-u.svg" alt=""> -->
+  </div>
   <router-outlet />

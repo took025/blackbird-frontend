@@ -3,6 +3,37 @@
     <div class="center py-[40px]">
         <h1 class="text-3xl">Our <strong>Wizards...</strong></h1>
     </div>
+
+    <!-- <app-wizards-animation></app-wizards-animation> -->
+    <!-- <div class="wizards-container py-[75px] mb-[50px]" *ngIf="componentView">
+        <div class="wizards-content">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template *ngFor="let slide of images" carouselSlide [width]="130">
+                    <div class="carousel-inner flex">
+                        <div class="w-3/5">
+                            <img class="w-full" src="../../../assets/img/wizard.svg" alt="Slide" class="w-3/5">
+                        </div>
+                        <div class="right__side flex flex-col justify-between pl-[16px] w-2/5">
+                            <span class="helvetica">0{{slide.id }} </span>
+                            <div class="flex-col flex">
+                                <p class="text-xl couturier-Regular">
+                                    {{slide.position}}
+                                </p>
+                                <span class="helvetica">
+                                    {{slide.name}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div> -->
+
+    
+    <!-- <div class="center py-[40px]">
+        <h1 class="text-3xl">Our <strong>Wizards...</strong></h1>
+    </div>
     <div class="wizards-container py-[75px] mb-[50px]" *ngIf="componentView">
         <div class="wizards-content">
             <owl-carousel-o [options]="customOptions">
@@ -26,14 +57,31 @@
                 </ng-template>
             </owl-carousel-o>
         </div>
-    </div>
-    <!-- <div class="wizards-container py-[75px] mb-[25px]">
-        <div class="carousel flex" #carousel>
+    </div> -->
+
+
+
+    <div class="wizards-container py-[75px] mb-[25px]">
+        <div class="carousel flex">
             <div class="carousel-inner flex">
+                <!-- <div class="slide flex items-stretch" *ngFor="let slide of images">
+                    <img src="../../../assets/img/wizard.svg" alt="Slide" class="w-2/3">
+                    <div class="right__side flex flex-col justify-between pl-[16px]">
+                        <span>0{{slide.id}} </span>
+                        <div class="flex-col flex">
+                            <p class="text-xl">
+                                {{slide.position}}
+                            </p>
+                            <span>
+                                {{slide.name}}
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
                 <div class="slide flex items-stretch" *ngFor="let slide of images">
                     <img src="../../../assets/img/wizard.svg" alt="Slide" class="w-2/3">
                     <div class="right__side flex flex-col justify-between pl-[16px]">
-                        <span>0{{slide.id + 1}} </span>
+                        <span>0{{slide.id}} </span>
                         <div class="flex-col flex">
                             <p class="text-xl">
                                 {{slide.position}}
@@ -46,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="center relative">
+        <!-- <div class="center relative">
             <div class="buttons">
                 <button class="mr-[5px]" (click)="prev(true)">
                     <img src="../../../assets/img/prev.svg" alt="">
@@ -55,6 +103,7 @@
                     <img src="../../../assets/img/next.svg" alt="">
                 </button>
             </div>
-        </div>
+        </div> -->
 
-    </div> -->
+       
+    </div> 

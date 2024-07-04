@@ -1,11 +1,13 @@
 .sticky-element {
   position: sticky;
-  top: 230px;
-  background-color: white; /* Ensuring visibility */
+  top: 300px;
+  background-color: white;
+  /* Ensuring visibility */
   border: 1px solid #f8f8f880;
   margin: 10px 0;
   margin-bottom: 70px;
 }
+
 .slider__Action {
   .slider__line {
     border-bottom: 2px solid #767676;
@@ -15,6 +17,7 @@
     margin-bottom: 6px;
     margin-left: 5px;
     transition: 0.2s;
+
     &.active {
       transition: 0.2s;
       border-color: #b80e45;
@@ -22,10 +25,48 @@
     }
   }
 }
+
+
+
+.top__side {
+  position: sticky;
+  top: 130px;
+  height: 270px;
+  overflow: hidden;
+  align-items: center;
+
+  .rotaing__image {
+    width: 100%;
+    transition: transform 0.3s;
+    transform: translateY(38%);
+
+    &.active__2 {
+      transform: translateY(-100px);
+      transition: transform 0.3s;
+    }
+
+    &.active__3 {
+      transform: translateY(100px);
+      transition: transform 0.3s;
+    }
+
+    &.active__4 {
+      transform: translateY(100px);
+      transition: transform 0.3s;
+    }
+
+    &.active__5 {
+      transform: translateY(100px);
+      transition: transform 0.3s;
+    }
+  }
+}
+
 .background__image {
   position: relative;
   width: 100%;
   height: 100%;
+
   // overflow: hidden;
   &::before {
     content: "";
@@ -38,10 +79,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     transition: transform 0.5s ease;
-    z-index: 1; /* Ensure the pseudo-element is behind the content */
+    z-index: 1;
+    /* Ensure the pseudo-element is behind the content */
   }
-  &.rotate__1::before {
-  }
+
+  &.rotate__1::before {}
 
   &.rotate__2::before {
     transform: rotate(90deg);
@@ -52,9 +94,11 @@
     transform: rotate(180deg);
     top: 500px;
   }
+
   &.rotate__4::before {
     transform: rotate(270deg);
   }
+
   &.rotate__5::before {
     transform: rotate(360deg);
   }

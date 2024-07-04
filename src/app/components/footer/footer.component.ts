@@ -62,17 +62,6 @@ export class FooterComponent {
   // }
 
 
-  gotoTop() {
-    if (this.isBrowser) {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-  }
-
-
 
   // updateBorder(scrollPercentage: number) {
   //   if (this.isBrowser) {

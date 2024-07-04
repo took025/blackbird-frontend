@@ -1,60 +1,84 @@
 .projects__content {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-image: url(../../../assets/img/rows.svg);
+
+    &.isInview {
+        background-size: 100%;
+    }
+
     &.in-view {
+        animation: background__image 4s;
+        animation-delay: 1s;
+        transition-delay: 1s;
+        background-blend-mode: lighten;
+        // background-size: 100%;
+
+
         .center {
             opacity: 1;
             transition-delay: 0.5s;
         }
+
         .center .middle__side {
             opacity: 1;
             top: 50%;
             font-size: 46px;
             transition-duration: 1s;
         }
+
         .center .project__btn {
             transition-delay: 0.8s;
             transition: 1s;
             opacity: 1;
         }
+
         .center .top__side .left__side .top__side__img {
             animation: topside__animation 4s ease-in-out;
             animation-delay: 0.5s;
         }
+
         .center .anim__top {
             animation: img__top__animation 4s ease-in-out;
             animation-delay: 0.5s;
         }
+
         .center .bottom__side {
             .bottom__side__img {
                 animation: bottom__animation 4s ease-in-out;
                 animation-delay: 0.5s;
                 margin-left: 30px;
             }
-            .left__side {
-                // padding-left: 30px;
-            }
         }
+
         .center .text__bottom {
             animation: text__bottom__animation 4s ease-in-out;
             animation-delay: 0.5s;
             margin-left: 34px;
         }
+
         .center .anim__bottom {
             animation: img__bottom__animation 4s ease-in-out;
             animation-delay: 0.5s;
         }
+
         .center .text__top {
             animation: text__top__animation 4s ease-in-out;
             animation-delay: 0.5s;
         }
     }
+
     .center {
         min-height: calc(100vh - 200px);
         opacity: 0;
+
         .top__side .top__side__img {
             // position: absolute;
             top: 0;
             left: 0;
         }
+
         .anim__top {
             margin-left: 25px;
             // position: absolute;
@@ -62,30 +86,35 @@
             left: 177px;
             transform: translate(0, 0);
         }
+
         .anim__bottom {
             // position: absolute;
             bottom: 0;
             right: 220px;
             transform: translate(0, 0);
         }
+
         .bottom__side .bottom__side__img {
             // position: absolute;
             bottom: 30px;
             right: 0;
             transform: translate(0, 0);
         }
+
         .text__bottom {
             // position: absolute;
             bottom: 0;
             right: 15px;
             transform: translate(0, 0);
         }
+
         .text__top {
             // position: absolute;
             top: 112px;
             left: 15px;
             transform: translate(0, 0);
         }
+
         .project__btn {
             display: flex;
             align-items: center;
@@ -99,11 +128,13 @@
             border-radius: 64px;
             transition: 0.3s;
             opacity: 0;
+
             &:hover {
                 transition: 0.3s;
                 background-color: #b80e45;
             }
         }
+
         .middle__side {
             transition-delay: 1s;
             position: absolute;
@@ -116,6 +147,7 @@
         }
     }
 }
+
 @keyframes topside__animation {
     0% {
         position: absolute;
@@ -123,28 +155,33 @@
         left: 50%;
         transform: translate(-100%, -50%);
     }
+
     40% {
         position: absolute;
         top: 50%;
         left: 15px;
         transform: translate(0, -50%);
     }
+
     70% {
         position: absolute;
         top: 0;
         left: 15px;
         transform: translate(0, 0);
     }
+
     99% {
         position: absolute;
         top: 0;
         left: 15px;
         transform: translate(0, 0);
     }
+
     100% {
         position: initial;
     }
 }
+
 @keyframes text__top__animation {
     0% {
         position: absolute;
@@ -153,6 +190,7 @@
         opacity: 0;
         transform: translate(0, -50%);
     }
+
     40% {
         position: absolute;
         top: calc(50% + 70px);
@@ -160,18 +198,22 @@
         opacity: 1;
         transform: translate(0, -50%);
     }
+
     70% {
         position: absolute;
         top: 112px;
         transform: translate(0, 0);
     }
+
     99% {
         position: absolute;
     }
+
     100% {
         position: initial;
     }
 }
+
 @keyframes img__top__animation {
     0% {
         position: absolute;
@@ -179,19 +221,23 @@
         left: 177px;
         opacity: 0;
     }
+
     40% {
         position: absolute;
         opacity: 0;
     }
+
     99% {
         position: absolute;
         opacity: 1;
         // left: 177px;
     }
+
     100% {
         position: initial;
     }
 }
+
 @keyframes img__bottom__animation {
     0% {
         opacity: 0;
@@ -200,22 +246,27 @@
         right: 220px;
         transform: translate(0, 0);
     }
+
     40% {
         position: absolute;
         opacity: 0;
     }
+
     70% {
         position: absolute;
         opacity: 1;
     }
+
     99% {
         position: absolute;
         opacity: 1;
     }
+
     100% {
         position: initial;
     }
 }
+
 @keyframes text__bottom__animation {
     0% {
         position: absolute;
@@ -224,6 +275,7 @@
         opacity: 0;
         transform: translate(0, -50%);
     }
+
     40% {
         position: absolute;
         bottom: calc(50% - 100px);
@@ -231,22 +283,26 @@
         opacity: 1;
         transform: translate(0, -50%);
     }
+
     70% {
         right: 60px;
         position: absolute;
         bottom: 5px;
         transform: translate(0, 0);
     }
+
     99% {
         right: 60px;
         position: absolute;
         bottom: 5px;
         transform: translate(0, 0);
     }
+
     100% {
         position: initial;
     }
 }
+
 @keyframes bottom__animation {
     0% {
         position: absolute;
@@ -254,22 +310,52 @@
         right: 50%;
         transform: translate(100%, 50%);
     }
+
     40% {
         bottom: 50%;
         right: 15px;
         transform: translate(0, 50%);
     }
+
     70% {
         bottom: 29px;
         right: 15px;
         transform: translate(0, 0);
     }
+
     99% {
         bottom: 29px;
         right: 15px;
         position: absolute;
     }
+
     100% {
         position: initial;
+    }
+}
+
+@keyframes background__image {
+    0% {
+        background-size: 50%;
+        background-blend-mode: darken;
+    }
+
+    10% {
+        background-blend-mode: lighten;
+    }
+
+    30% {
+        background-size: 100%;
+        // background-blend-mode: darken;
+
+    }
+
+    70% {
+        background-size: 100%;
+    }
+
+    100% {
+        background-size: 100%;
+
     }
 }

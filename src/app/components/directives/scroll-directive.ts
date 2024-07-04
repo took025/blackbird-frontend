@@ -6,6 +6,8 @@ import {
   PLATFORM_ID,
   OnDestroy,
   OnInit,
+  Output,
+  EventEmitter,
 } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 
@@ -14,6 +16,8 @@ import { isPlatformBrowser } from "@angular/common";
   standalone: true,
 })
 export class InViewDirective implements OnInit, OnDestroy {
+  @Output() inView: EventEmitter<boolean> = new EventEmitter();
+
   private observer!: IntersectionObserver;
   private readonly inViewClass = "in-view";
   private isBrowser: boolean;
@@ -37,13 +41,15 @@ export class InViewDirective implements OnInit, OnDestroy {
                   this.element.nativeElement,
                   this.inViewClass
                 );
+                this.inView.emit(true);
               }, 500);
             }
-            //  else {
+            // else {
             //   this.renderer.removeClass(
             //     this.element.nativeElement,
             //     this.inViewClass
             //   );
+            //   this.inView.emit(false);
             // }
           });
         },
