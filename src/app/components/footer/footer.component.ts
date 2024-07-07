@@ -32,34 +32,34 @@ export class FooterComponent {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  // @HostListener("window:scroll", [])
-  // onWindowScroll() {
-  //   if (this.isBrowser) {
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    if (this.isBrowser) {
 
-  //     const scrollTopPro = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  //     const documentHeightPro = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  //     const scrollPercentagePro = (scrollTopPro / documentHeightPro) * 100;
-  //     this.updateBorder(scrollPercentagePro);
+      // const scrollTopPro = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      // const documentHeightPro = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      // const scrollPercentagePro = (scrollTopPro / documentHeightPro) * 100;
+      // this.updateBorder(scrollPercentagePro);
 
 
-  //     const footerPosition = this.el.nativeElement.getBoundingClientRect().top;
-  //     const windowHeight = window.innerHeight;
-  //     if (footerPosition <= windowHeight && footerPosition >= 0) {
-  //       const scrollTop = window.scrollY;
-  //       const footerHeight = this.el.nativeElement.offsetHeight;
-  //       const documentHeight = document.documentElement.scrollHeight;
-  //       const footerScrollPercentage =
-  //         (scrollTop + windowHeight - documentHeight + footerHeight) /
-  //         footerHeight;
-  //       const calculateSize = 180 + footerScrollPercentage * 300 + "px"
-  //       if (Number(calculateSize.slice(0, -2)) > 180) {
-  //         this.backgroundSize = 180 + footerScrollPercentage * 300 + "px";
-  //       }
-  //     } else {
-  //       this.backgroundSize = "400px";
-  //     }
-  //   }
-  // }
+      const footerPosition = this.el.nativeElement.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (footerPosition <= windowHeight && footerPosition >= 0) {
+        const scrollTop = window.scrollY;
+        const footerHeight = this.el.nativeElement.offsetHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const footerScrollPercentage =
+          (scrollTop + windowHeight - documentHeight + footerHeight) /
+          footerHeight;
+        const calculateSize = 180 + footerScrollPercentage * 300 + "px"
+        if (Number(calculateSize.slice(0, -2)) > 180) {
+          this.backgroundSize = 180 + footerScrollPercentage * 300 + "px";
+        }
+      } else {
+        this.backgroundSize = "400px";
+      }
+    }
+  }
 
 
 

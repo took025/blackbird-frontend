@@ -63,17 +63,17 @@ export class HeaderComponent {
     if (this.isBrowser) {
 
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      // if ((scrollTop > this.previousScrollTop) && (scrollTop > 100)) {
-      //   this.hdieHeader = true;
-      // } else if (scrollTop < this.previousScrollTop) {
-      //   this.hdieHeader = false;
-      // }
-      const scrollSpeed = Math.abs(scrollTop - this.previousScrollTop) / 5;
-      if (scrollTop > 100) {
-        this.fastScrolling = scrollSpeed > 3; // Adjust the threshold as needed
-      } else {
-        this.fastScrolling = false
+      if ((scrollTop > this.previousScrollTop) && (scrollTop > 150)) {
+        this.hdieHeader = true;
+      } else if (scrollTop < this.previousScrollTop) {
+        this.hdieHeader = false;
       }
+      // const scrollSpeed = Math.abs(scrollTop - this.previousScrollTop) / 5;
+      // if (scrollTop > 100) {
+      //   this.fastScrolling = scrollSpeed > 3; // Adjust the threshold as needed
+      // } else {
+      //   this.fastScrolling = false
+      // }
 
 
       console.log(this.fastScrolling, scrollTop);

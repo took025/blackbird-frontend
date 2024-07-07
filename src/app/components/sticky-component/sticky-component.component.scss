@@ -2,16 +2,16 @@
   position: sticky;
   top: 300px;
   background-color: white;
-  /* Ensuring visibility */
   border: 1px solid #f8f8f880;
-  margin: 10px 0;
-  margin-bottom: 70px;
+  &:not(:first-child) {
+    margin-top: 70px;
+  }
+  margin-bottom: 0;
 }
 
 .slider__Action {
   .slider__line {
     border-bottom: 2px solid #767676;
-    // background-color: #767676;
     height: 2px;
     width: 16px;
     margin-bottom: 6px;
@@ -30,78 +30,77 @@
 
 .top__side {
   position: sticky;
-  top: 130px;
-  height: 270px;
+  top: 150px;
+  height: 155px;
   overflow: hidden;
   align-items: center;
 
   .rotaing__image {
     width: 100%;
     transition: transform 0.3s;
-    transform: translateY(38%);
+    max-width: 900px;
+    transform: translateY(-15px) translateX(50%) rotate(27deg);
 
     &.active__2 {
-      transform: translateY(-100px);
-      transition: transform 0.3s;
+      transform: translateY(-15px) translateX(50%) rotate(105deg);
     }
 
     &.active__3 {
-      transform: translateY(100px);
-      transition: transform 0.3s;
+      transform: translateY(-15px) translateX(55%) rotate(185deg);
     }
 
     &.active__4 {
-      transform: translateY(100px);
-      transition: transform 0.3s;
+      transform: translateY(-15px) translateX(62%) rotate(255deg);
     }
-
+    
     &.active__5 {
-      transform: translateY(100px);
-      transition: transform 0.3s;
+      transform: translateY(-15px) translateX(62%) rotate(330deg);
     }
   }
 }
-
 .background__image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  // overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    // background-image: url(../../../assets/img/buisness-background.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 0.5s ease;
-    z-index: 1;
-    /* Ensure the pseudo-element is behind the content */
-  }
-
-  &.rotate__1::before {}
-
-  &.rotate__2::before {
-    transform: rotate(90deg);
-    top: 256px;
-  }
-
-  &.rotate__3::before {
-    transform: rotate(180deg);
-    top: 500px;
-  }
-
-  &.rotate__4::before {
-    transform: rotate(270deg);
-  }
-
-  &.rotate__5::before {
-    transform: rotate(360deg);
-  }
-
-  /* Additional classes as needed */
+  padding-top: 70px;
 }
+// .background__image {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+
+//   // overflow: hidden;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 200px;
+//     height: 200px;
+//     // background-image: url(../../../assets/img/buisness-background.svg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     transition: transform 0.5s ease;
+//     z-index: 1;
+//     /* Ensure the pseudo-element is behind the content */
+//   }
+
+//   &.rotate__1::before {}
+
+//   &.rotate__2::before {
+//     transform: rotate(90deg);
+//     top: 256px;
+//   }
+
+//   &.rotate__3::before {
+//     transform: rotate(180deg);
+//     top: 500px;
+//   }
+
+//   &.rotate__4::before {
+//     transform: rotate(270deg);
+//   }
+
+//   &.rotate__5::before {
+//     transform: rotate(360deg);
+//   }
+
+//   /* Additional classes as needed */
+// }
