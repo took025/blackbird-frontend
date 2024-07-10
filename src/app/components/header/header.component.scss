@@ -34,13 +34,102 @@ $transition : 1s;
     }
 
     .hidable__image {
-      max-height: 400px;
+      .black__bird {
+        opacity: 0;
+        transition: $transition;
+      }
+
+      .word__1,
+      .word__2,
+      .word__3,
+      .word__4,
+      .word__5,
+      .word__6,
+      .word__7,
+      .word__8,
+      .word__9,
+      .word__10 {
+        transform: translateY(100%);
+        max-height: 400px;
+        transition: $transition;
+      }
+    }
+
+    .under__text {
+      max-width: 0px;
+      white-space: nowrap;
+      overflow: hidden;
       transition: $transition;
-      // animation: marquee 3.5s ease;
     }
   }
 
+  &.loaded {
+    .banner__content {
+      .hidable__image {
+        transition: $transition;
+        transform: translateY(0);
+        transition-delay: 1;
 
+        .black__bird {
+          opacity: 1;
+          transition: $transition;
+          transition-delay: $transition * 2;
+        }
+        .word__1,
+        .word__2,
+        .word__3,
+        .word__4,
+        .word__5,
+        .word__6,
+        .word__7,
+        .word__8,
+        .word__9,
+        .word__10 {
+          transform: translateY(0);
+          max-height: 400px;
+          transition: $transition;
+        }
+
+        .word__1 {
+          transition-delay: 0.1s;
+        }
+        .word__2 {
+          transition-delay: 0.2s;
+        }
+        .word__3 {
+          transition-delay: 0.3s;
+        }
+        .word__4 {
+          transition-delay: 0.4s;
+        }
+        .word__5 {
+          transition-delay: 0.5s;
+        }
+        .word__6 {
+          transition-delay: 0.6s;
+        }
+        .word__7{
+          transition-delay: 0.7s;
+        }
+        .word__8 {
+          transition-delay: 0.8s;
+        }
+        .word__9 {
+          transition-delay: 0.9s;
+        }
+        .word__10 {
+          transition-delay: 1s;
+        }
+      }
+
+      .under__text {
+        max-width: 1000px;
+        // overflow: visible;
+        // transition: $transition * 2;
+        transition-delay: 1s;
+      }
+    }
+  }
 
   &.compress {
 
@@ -52,6 +141,8 @@ $transition : 1s;
       .hidable__image {
         max-height: 80px;
         transition: $transition;
+        // transform: translateY(100%);
+        // transition-delay: 1;
       }
 
       .right__side {
@@ -69,15 +160,17 @@ $transition : 1s;
     position: fixed;
 
     .under__text {
+      transition-delay: 0s !important;
       opacity: 0;
+      transition: 0.3s;
     }
   }
+
   &.hide__header {
     max-height: 0;
     min-height: 0;
     // opacity: 0;
     transition: $transition / 2;
-  
   }
 }
 
