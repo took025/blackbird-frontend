@@ -50,6 +50,7 @@
 }
 
 .marquee-content {
+    font-family: HelveticaNeue;
     display: inline-block;
     white-space: nowrap;
     color: white;
@@ -78,6 +79,7 @@
         opacity: 0;
         transition: 0.6s ease-in-out;
     }
+
     .hover__btn {
         position: absolute;
         top: 20%;

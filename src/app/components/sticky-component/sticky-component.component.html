@@ -4,10 +4,10 @@
 
     <div class="flex w-full justify-between">
       <div style="position: sticky ; top: 300px; height: 400px;">
-        <p class="text-3xl helvetica">
+        <p class="text-3xl helvetica mb-[24px]">
           What we can help your business <strong>unlock</strong>
         </p>
-        <div class="slider__Action flex items-end" *ngFor="let item of sliderItems">
+        <div class="slider__Action flex items-end " *ngFor="let item of sliderItems">
           <!-- {{item}} -->
           <span class="slider__numbering w-5">
             0{{item}}
@@ -24,7 +24,7 @@
 
         <div *ngFor="let item of items; let i = index" class="sticky-element p-[30px]" appInViewSticky
           [attr.data-index]="i">
-          <h3 class="text-sm mb-[25px]">Marketing</h3>
+          <h3 class="text-sm mb-[25px] helvetica">Marketing</h3>
           <h6 class="text-xs helvetica">
             At XYZ Company, we offer a cutting-edge solution designed to streamline your workflow and boost
             productivity.

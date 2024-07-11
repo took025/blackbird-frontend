@@ -1,6 +1,6 @@
 .sticky-element {
   position: sticky;
-  top: 370px;
+  top: 300px;
   background-color: white;
   border: 1px solid #f8f8f880;
   &:not(:first-child) {
@@ -37,24 +37,24 @@
 
   .rotaing__image {
     width: 100%;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
     max-width: 900px;
-    transform: translateY(-15px) translateX(50%) rotate(27deg);
+    transform: translateY(-15px) translateX(50%) rotate(17deg);
 
     &.active__2 {
-      transform: translateY(-15px) translateX(50%) rotate(105deg);
+      transform: translateY(-15px) translateX(50%) rotate(90deg);
     }
 
     &.active__3 {
-      transform: translateY(-15px) translateX(55%) rotate(185deg);
+      transform: translateY(-15px) translateX(55%) rotate(180deg);
     }
 
     &.active__4 {
-      transform: translateY(-15px) translateX(62%) rotate(255deg);
+      transform: translateY(-15px) translateX(62%) rotate(240deg);
     }
     
     &.active__5 {
-      transform: translateY(-15px) translateX(62%) rotate(330deg);
+      transform: translateY(-15px) translateX(62%) rotate(310deg);
     }
   }
 }
