@@ -29,8 +29,6 @@ export class InViewStickyDirective implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.observer = new IntersectionObserver(
         ([entry]) => {
-          console.log(entry.intersectionRatio);
-
           if (entry.isIntersecting && entry.intersectionRatio === 1) {
             const dataIndex = this.el.nativeElement.getAttribute("data-index");
             if (dataIndex !== null) {

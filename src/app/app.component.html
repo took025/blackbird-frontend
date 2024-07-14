@@ -1,24 +1,5 @@
-<!-- <header class="header" appInView>
-  <nav class="navigation flex justify-between w-full">
-    <div class="left__side">
-      <a [routerLink]="[ '/' ]">
-        <img src="../assets/img/logo.svg" alt="">
-      </a>
-    </div>
-    <div class="right__side flex items-center">
-      <div>En </div>
-      <div class="mx-[12px]">
-        <button class="btn btn-secondary">contact us</button>
-      </div>
-      <div class="menu__item cursor-pointer">
-        <img src="../assets/img/menu-icon.svg" alt="">
-      </div>
-    </div>
-  </nav>
-</header> -->
 <div id="homePage"></div>
 
-<!-- [ngClass]="{'compress': loaded}" -->
 <app-header />
 
 <section class="sponsosrs__section h-72 bg-black flex ">
@@ -145,18 +126,12 @@
 <footer>
   <app-footer></app-footer>
   <div class="scroll__up">
-    <!-- app.component.html -->
-    <div class="progress-container cursor-pointer" (click)="gotoTop()"  *ngIf="scrollPercentage">
+    <div class="progress-container cursor-pointer" (click)="gotoTop()" *ngIf="scrollPercentage">
       <svg class="progress-circle" viewBox="0 0 120 120">
-        <!-- Track -->
         <circle class="track" cx="60" cy="60" r="50"></circle>
-        <!-- Filled progress -->
         <circle class="filled" cx="60" cy="60" r="50" stroke-dasharray="0 314"
           [style.strokeDasharray]="(scrollPercentage / 100) * 314 + ' 314'"></circle>
       </svg>
     </div>
-
-
-    <!-- <img (click)="gotoTop()" class="scroll__up cursor-pointer" src="../../../assets/img/scroll-u.svg" alt=""> -->
   </div>
   <router-outlet />
