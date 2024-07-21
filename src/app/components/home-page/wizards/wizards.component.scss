@@ -1,0 +1,121 @@
+.swiper-container {
+    position: relative;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.swiper-button-prev {
+    left: 10px;
+    // background-image: url("path/to/your/prev-arrow.png");
+}
+
+.swiper-button-next {
+    right: 10px;
+    // background-image: url("path/to/your/next-arrow.png");
+}
+.carousel {
+    animation: marquee 100s linear infinite;
+}
+.carousel-inner {
+    transition: transform 0.5s ease; /* Smooth transition over 0.5 seconds */
+
+    // display: grid;
+    // grid-template-columns: repeat(3, calc(33%));
+    // display: grid;
+    // grid-gap: 10px;
+    // grid-auto-flow: column;
+    // grid-template-columns: repeat(auto-fill, 186px);
+    .slide {
+        display: flex;
+        flex: 0 0 33.3333%;
+        // padding-right: 5px;
+    }
+}
+.wizards-container {
+    position: relative;
+    &::after {
+        content: "";
+        pointer-events: none;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 4px);
+        border-top: 1px dashed #1c1c1cb2;
+        border-bottom: 1px dashed #1c1c1cb2;
+        position: absolute;
+    }
+    border-top: 1px dashed #1c1c1cb2;
+    border-bottom: 1px dashed #1c1c1cb2;
+    .buttons {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        background: white;
+        z-index: 111;
+    }
+}
+
+::ng-deep .owl-nav {
+    background-color: initial !important;
+}
+::ng-deep .owl-nav {
+    .owl-prev,
+    .owl-next {
+        background-color: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .custom-next {
+        position: absolute;
+        bottom: -90px;
+        right: 10%;
+        background: white;
+        z-index: 111;
+    }
+    .custom-prev {
+        position: absolute;
+        bottom: -90px;
+        right: calc(10% + 40px);
+        background: white;
+        z-index: 111;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-170%);
+    }
+}
+
+// .slider-container {
+//     width: 100%;
+//     overflow: hidden;
+//     position: relative;
+//   }
+  
+//   .slider {
+//     display: flex;
+//     transition: transform 1s linear;
+//   }
+  
+//   .slider-item {
+//     min-width: 33.33%; /* Show 3 items at a time */
+//     box-sizing: border-box;
+//   }
+  

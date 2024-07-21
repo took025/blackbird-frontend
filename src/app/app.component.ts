@@ -11,14 +11,14 @@ import {
   signal,
 } from "@angular/core";
 import { RouterLink, RouterOutlet } from "@angular/router";
-import { StickyComponentComponent } from "./components/sticky-component/sticky-component.component";
-import { WizardsComponent } from "./components/wizards/wizards.component";
+import { StickyComponentComponent } from "./components/home-page/sticky-component/sticky-component.component";
+import { WizardsComponent } from "./components/home-page/wizards/wizards.component";
 import { InViewDirective } from "./components/directives/scroll-directive";
 import { HeaderShrinkDirective } from "./components/directives/shrink-directive";
 import { InViewService } from "./main-service";
-import { ProjectsComponent } from "./components/projects/projects.component";
+import { ProjectsComponent } from "./components/home-page/projects/projects.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { HeaderComponent } from "./components/header/header.component";
+import { HeaderComponent } from "./components/home-page/header/header.component";
 
 @Component({
   selector: "app-root",
@@ -26,16 +26,19 @@ import { HeaderComponent } from "./components/header/header.component";
   imports: [
     RouterOutlet,
     RouterLink,
-    StickyComponentComponent,
-    NgFor,
-    NgIf,
-    WizardsComponent,
-    InViewDirective,
-    HeaderShrinkDirective,
-    ProjectsComponent,
     FooterComponent,
-    NgClass,
     HeaderComponent,
+    NgIf,
+    // StickyComponentComponent,
+    // NgFor,
+    // NgIf,
+    // WizardsComponent,
+    // InViewDirective,
+    // HeaderShrinkDirective,
+    // ProjectsComponent,
+    // FooterComponent,
+    // NgClass,
+    // HeaderComponent,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
@@ -47,32 +50,32 @@ export class AppComponent {
   scrollTopSignal = signal(0);
   scrollPercentage: number = 0;
 
-  items: { id: number; text: string }[] = [
-    {
-      id: 1,
-      text: "Gorenje",
-    },
-    {
-      id: 1,
-      text: "Gorenje",
-    },
-    {
-      id: 1,
-      text: "Samsung",
-    },
-    {
-      id: 1,
-      text: "Gorenje",
-    },
-    // {
-    //   id: 1,
-    //   text: "Gorenje",
-    // },
-    // {
-    //   id: 1,
-    //   text: "Gorenje",
-    // },
-  ];
+  // items: { id: number; text: string }[] = [
+  //   {
+  //     id: 1,
+  //     text: "Gorenje",
+  //   },
+  //   {
+  //     id: 1,
+  //     text: "Gorenje",
+  //   },
+  //   {
+  //     id: 1,
+  //     text: "Samsung",
+  //   },
+  //   {
+  //     id: 1,
+  //     text: "Gorenje",
+  //   },
+  // {
+  //   id: 1,
+  //   text: "Gorenje",
+  // },
+  // {
+  //   id: 1,
+  //   text: "Gorenje",
+  // },
+  // ];
 
 
   constructor(
@@ -84,9 +87,13 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.onWindowScroll()
+  }
+
+  ngAfterViewInit(): void {
+
+    console.log('loaded');
+    
   }
 
 
@@ -108,10 +115,4 @@ export class AppComponent {
       });
     }
   }
-  // @HostListener("window:resize", ["$event"])
-  // onResize(event: Event): void {
-  //   if (this.isBrowser) {
-  //     console.log(this.service.elementIndices());
-  //   }
-  // }
 }

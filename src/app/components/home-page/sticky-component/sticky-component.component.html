@@ -1,0 +1,39 @@
+<!-- <div class="background__image rotate__{{service.elementIndices().length}}"> -->
+<div class="background__image rotate__{{service.elementIndices().length}}">
+  <div class=" flex center h-100 pb-[95px] flex-col">
+
+    <div class="flex w-full justify-between">
+      <div style="position: sticky ; top: 300px; height: 400px;">
+        <p class="text-3xl helvetica mb-[24px]">
+          What we can help your business <strong>unlock</strong>
+        </p>
+        <div class="slider__Action flex items-end " *ngFor="let item of sliderItems">
+          <!-- {{item}} -->
+          <span class="slider__numbering w-5">
+            0{{item}}
+          </span>
+          <div class="slider__line" [ngClass]="{'active': item ===  service.elementIndices().length}"></div>
+        </div>
+        <!-- active is {{service.elementIndices().length === 0 ? 0 : service.elementIndices().length}} -->
+      </div>
+      <div class="flex flex-col w-2/4">
+        <div class="top__side h-16 flex justify-end">
+          <img class="rotaing__image active__{{service.elementIndices().length}}"
+            src="../../../../assets/img/anim-list.svg" alt="">
+        </div>
+
+        <div *ngFor="let item of items; let i = index" class="sticky-element p-[30px]" appInViewSticky
+          [attr.data-index]="i">
+          <h3 class="text-sm mb-[25px] helvetica">Marketing</h3>
+          <h6 class="text-xs helvetica">
+            At XYZ Company, we offer a cutting-edge solution designed to streamline your workflow and boost
+            productivity.
+            Our innovative platform leverages advanced technology to simplify complex tasks, saving you time and
+            resources.
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

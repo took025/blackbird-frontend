@@ -1,4 +1,4 @@
-import { NgClass, NgStyle, isPlatformBrowser } from "@angular/common";
+import { NgClass, NgIf, NgStyle, isPlatformBrowser } from "@angular/common";
 import {
   Component,
   ElementRef,
@@ -9,11 +9,15 @@ import {
   Renderer2,
   ViewChild,
 } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from "rxjs";
+
 
 @Component({
   selector: "app-footer",
   standalone: true,
-  imports: [NgStyle, NgClass],
+  imports: [NgStyle, NgClass ,NgIf],
   templateUrl: "./footer.component.html",
   styleUrl: "./footer.component.scss",
 })
@@ -23,11 +27,12 @@ export class FooterComponent {
   currentYear: number = new Date().getFullYear();
   backgroundSize: string = "200px";
   isBrowser: boolean = false;
-  ngOnInit() { }
+  showfotterUpSide: boolean = true;
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
     private el: ElementRef,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private router: Router
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
@@ -59,6 +64,18 @@ export class FooterComponent {
         this.backgroundSize = "400px";
       }
     }
+  }
+
+  ngOnInit(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((route: any) => {
+      if (!route.urlAfterRedirects.includes('home')) {
+        this.showfotterUpSide = false
+      } else {
+        this.showfotterUpSide = true;
+      }
+    })
   }
 
 

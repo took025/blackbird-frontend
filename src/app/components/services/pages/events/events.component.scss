@@ -1,0 +1,7 @@
+.tracked-element {
+    transition: 0.3s;
+    &.compressed {
+        max-height: 200px !important;
+        min-height: 200px !important;
+    }
+}

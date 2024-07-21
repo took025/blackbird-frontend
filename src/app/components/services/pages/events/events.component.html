@@ -1,0 +1,11 @@
+<app-service-item></app-service-item>
+<div class="scrollable-container">
+    <div *ngFor="let item of trackedItems; let i = index" [style.position]="'initial'" [style.top.px]="item.top"
+        [style.maxHeight]="item.height" [style.minHeight]="item.height" [style.backgroundColor]="item.color" class="tracked-element" #trackedElement
+        [class.compressed]="item.isCollapsed" [appTrackScroll]="item.top" collapseClass="compressed">
+        <!-- Content here -->
+    </div>
+
+
+</div>
+<app-wizards></app-wizards>
