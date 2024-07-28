@@ -38,6 +38,7 @@
         .text,
         .btn {
             max-height: 500px;
+            transition: none;
         }
 
     }
@@ -49,42 +50,61 @@
     //     transition: 1s;
     //     pointer-events: none;
     // }
+    &.anim-block {
+        margin-top: 100px;
+        min-height: initial;
+        max-height: initial;
+        padding-block: initial;
 
-    &.show-element {
+        .__left,
+        .__right {
+            transform: translateY(400px);
+            opacity: 0.3;
+            transition: 1s;
+            transition-delay: 0.1s;
+            pointer-events: none;
+        }
 
-        // .__left,
-        // .__right {
-        //     transform: translateY(0);
-        //     opacity: 1;
-        //     transition: 1s;
-        // }
+        &.show-element {
 
+            .__left,
+            .__right {
+                transform: translateY(0);
+                opacity: 1;
+                transition: 0.3s;
+            }
+
+        }
     }
 
     &.compress {
         max-height: 100px;
         min-height: 100px;
-        border-bottom: 1px solid;
+        border-bottom: 1px solid #A1A1A1;
         transition: 1s;
         align-items: start;
         overflow: hidden;
         padding-block: 0px;
+
         .__left,
         .__right {
             pointer-events: none;
         }
 
-        .block__item {}
+        // .block__item {}
+        .block__item {
 
-        .__right,
-        .text,
-        .btn {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: 1s;
-            border: none;
-            // transition-delay: 1s;
+            .__right,
+            .text,
+            .btn {
+                // display: none;
+                // max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: 0.5s;
+                border: none;
+                // transition-delay: 1s;
+            }
         }
 
         // .title {

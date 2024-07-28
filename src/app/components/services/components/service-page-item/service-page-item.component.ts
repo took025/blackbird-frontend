@@ -13,6 +13,7 @@ import { NgStyle } from '@angular/common';
   styleUrl: './service-page-item.component.scss'
 })
 export class ServicePageItemComponent {
+  @Input() activeClass?: string;
   @Input() elementTop?: number;
   @Input() scrollThresholdBottom?: number;
 

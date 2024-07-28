@@ -47,8 +47,7 @@ export class TrackScrollDirective {
     private trackScrollTop() {
         const rect = this.el.nativeElement.getBoundingClientRect();
         const distanceFromTop = rect.top;
-        console.log(distanceFromTop , this.elementTop , 'top');
-        
+
         if (this.elementTop !== undefined && distanceFromTop <= Number(this.elementTop)) {
             this.renderer.addClass(this.el.nativeElement, this.collapseClass);
         } else {
@@ -59,13 +58,16 @@ export class TrackScrollDirective {
     private trackScrollBottom() {
         const rect = this.el.nativeElement.getBoundingClientRect();
         const distanceFromBottom = window.innerHeight - rect.bottom;
-        console.log(distanceFromBottom , Number(this.elementBottom) , 'bottom');
 
-        if (this.elementBottom && distanceFromBottom >= Number(this.elementBottom)) {
+        // Logging for debugging purposes
+        console.log(`Distance from bottom: ${distanceFromBottom}, Element bottom threshold: ${this.elementBottom}`);
+
+        if (distanceFromBottom >= Number(this.elementBottom) - 300) {
             this.renderer.addClass(this.el.nativeElement, this.showElementClass);
         } 
         // else {
         //     this.renderer.removeClass(this.el.nativeElement, this.showElementClass);
         // }
-    }
+    
+}
 }

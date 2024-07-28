@@ -1,5 +1,6 @@
 <div class="scrollefect-block"[appTrackScroll]="elementTop"
-    [appTrackScrollBottom]="(scrollThresholdBottom)">
+    [appTrackScrollBottom]="(scrollThresholdBottom)" [collapseClass]="activeClass"
+    [class.anim-block]="activeClass !== 'compress'">
     <div class="block__item flex center">
         <div class="__left flex flex-col w-3/6">
             <div>

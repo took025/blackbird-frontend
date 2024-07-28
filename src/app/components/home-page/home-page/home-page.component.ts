@@ -14,11 +14,11 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../../footer/footer.component";
 import { ProjectsComponent } from "../projects/projects.component";
-import { HeaderShrinkDirective } from "../../directives/shrink-directive";
 import { InViewDirective } from "../../directives/scroll-directive";
 import { WizardsComponent } from "../wizards/wizards.component";
 import { StickyComponentComponent } from "../sticky-component/sticky-component.component";
 import { InViewService } from "../../../main-service";
+import { LogosComponent } from "../../logos/logos.component";
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -30,11 +30,11 @@ import { InViewService } from "../../../main-service";
     NgIf,
     WizardsComponent,
     InViewDirective,
-    HeaderShrinkDirective,
     ProjectsComponent,
     FooterComponent,
     NgClass,
     HeaderComponent,
+    LogosComponent,
   ],
   // exportAs: 'HomePageComponent',
   templateUrl: './home-page.component.html',

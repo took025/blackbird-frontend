@@ -14,7 +14,6 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { StickyComponentComponent } from "./components/home-page/sticky-component/sticky-component.component";
 import { WizardsComponent } from "./components/home-page/wizards/wizards.component";
 import { InViewDirective } from "./components/directives/scroll-directive";
-import { HeaderShrinkDirective } from "./components/directives/shrink-directive";
 import { InViewService } from "./main-service";
 import { ProjectsComponent } from "./components/home-page/projects/projects.component";
 import { FooterComponent } from "./components/footer/footer.component";

@@ -2,7 +2,9 @@
 
 <ul class="services__nav center">
     @for ( item of services; track item ) {
-    <li class="services__list"><a routerLink="/services/{{item.name}}" routerLinkActive="bg__{{item.name}} br__{{item.name}} active">{{item.name}}</a></li>
+    <li class="services__list"><a routerLink="/services/{{item.name}}"
+            routerLinkActive="bg__{{item.name}} br__{{item.name}} active">{{item.name}}</a></li>
     }
 </ul>
 <router-outlet></router-outlet>
+<app-also-check></app-also-check>

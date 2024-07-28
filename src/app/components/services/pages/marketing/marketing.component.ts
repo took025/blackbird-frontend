@@ -7,13 +7,17 @@ import { InViewDirective } from '../../../directives/scroll-directive';
 import { ServicePageItemComponent } from '../../components/service-page-item/service-page-item.component';
 import { AlsoCheckComponent } from '../../components/also-check/also-check.component';
 import { TrackSectionScrollDirective } from '../../../directives/test';
+import { LogosComponent } from '../../../logos/logos.component';
+import { HoverBlockComponent } from '../../../hover-block/hover-block.component';
 
 @Component({
   selector: 'app-marketing',
   standalone: true,
   imports: [WizardsComponent, ServiceItemComponent, InViewDirective, ServicePageItemComponent,
     AlsoCheckComponent,
-    TrackSectionScrollDirective],
+    TrackSectionScrollDirective,
+    LogosComponent,
+  HoverBlockComponent],
   templateUrl: './marketing.component.html',
   styleUrl: './marketing.component.scss'
 })
@@ -21,6 +25,7 @@ export class MarketingComponent {
   private scrollSubject = new Subject<MouseEvent>();
   private lastY = 0;
   private isBrowser: boolean;
+  public url = this.router.url.split('/').pop()
   activeRouteSignal: string | undefined = '';
   constructor(
     private el: ElementRef, private renderer: Renderer2,

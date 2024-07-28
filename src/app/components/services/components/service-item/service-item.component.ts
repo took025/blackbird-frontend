@@ -29,6 +29,8 @@ export class ServiceItemComponent {
         routerActive = route.urlAfterRedirects;
       });
     }
+    console.log(routerActive);
+    
     this.service = servicesData.filter(item => item.name === routerActive)[0];
   }
 }
