@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf, isPlatformBrowser } from "@angular/common";
+import { NgClass, NgFor, NgIf, isPlatformBrowser } from '@angular/common';
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
@@ -9,18 +9,18 @@ import {
   PLATFORM_ID,
   Renderer2,
   signal,
-} from "@angular/core";
-import { RouterLink, RouterOutlet } from "@angular/router";
-import { StickyComponentComponent } from "./components/home-page/sticky-component/sticky-component.component";
-import { WizardsComponent } from "./components/home-page/wizards/wizards.component";
-import { InViewDirective } from "./components/directives/scroll-directive";
-import { InViewService } from "./main-service";
-import { ProjectsComponent } from "./components/home-page/projects/projects.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { HeaderComponent } from "./components/home-page/header/header.component";
+} from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { StickyComponentComponent } from './components/home-page/sticky-component/sticky-component.component';
+import { WizardsComponent } from './components/home-page/wizards/wizards.component';
+import { InViewDirective } from './components/directives/scroll-directive';
+import { InViewService } from './main-service';
+import { ProjectsComponent } from './components/home-page/projects/projects.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/home-page/header/header.component';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
@@ -39,8 +39,8 @@ import { HeaderComponent } from "./components/home-page/header/header.component"
     // NgClass,
     // HeaderComponent,
   ],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
@@ -49,58 +49,36 @@ export class AppComponent {
   scrollTopSignal = signal(0);
   scrollPercentage: number = 0;
 
-  // items: { id: number; text: string }[] = [
-  //   {
-  //     id: 1,
-  //     text: "Gorenje",
-  //   },
-  //   {
-  //     id: 1,
-  //     text: "Gorenje",
-  //   },
-  //   {
-  //     id: 1,
-  //     text: "Samsung",
-  //   },
-  //   {
-  //     id: 1,
-  //     text: "Gorenje",
-  //   },
-  // {
-  //   id: 1,
-  //   text: "Gorenje",
-  // },
-  // {
-  //   id: 1,
-  //   text: "Gorenje",
-  // },
-  // ];
-
-
   constructor(
-    private renderer: Renderer2, private el: ElementRef,
+    private renderer: Renderer2,
+    private el: ElementRef,
     @Inject(PLATFORM_ID) platformId: Object,
-    private service: InViewService
+    private service: InViewService,
+    private router : Router,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.gotoTop();
+    //   }
+    // });
   }
 
   ngOnInit(): void {
-    this.onWindowScroll()
+    this.onWindowScroll();
   }
 
   ngAfterViewInit(): void {
-
     console.log('loaded');
-    
   }
 
-
-  @HostListener("window:scroll", ["$event"])
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     if (this.isBrowser) {
       const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       this.scrollPercentage = (winScroll / height) * 100;
     }
   }
@@ -110,7 +88,7 @@ export class AppComponent {
       window.scroll({
         top: 0,
         left: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }
