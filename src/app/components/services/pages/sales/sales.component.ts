@@ -4,15 +4,19 @@ import { ServiceItemComponent } from '../../components/service-item/service-item
 import { AlsoCheckComponent } from '../../components/also-check/also-check.component';
 import { InViewNewDirective } from '../../../directives/shrink-directive';
 import { ServicePageItemComponent } from '../../components/service-page-item/service-page-item.component';
+import { LogosComponent } from '../../../logos/logos.component';
 @Component({
   selector: 'app-sales',
   standalone: true,
-  imports: [WizardsComponent, ServiceItemComponent, AlsoCheckComponent,
+  imports: [
+    WizardsComponent,
+    ServiceItemComponent,
+    AlsoCheckComponent,
     InViewNewDirective,
-    ServicePageItemComponent],
+    ServicePageItemComponent,
+    LogosComponent
+  ],
   templateUrl: './sales.component.html',
-  styleUrl: './sales.component.scss'
+  styleUrl: './sales.component.scss',
 })
-export class SalesComponent {
-
-}
+export class SalesComponent {}

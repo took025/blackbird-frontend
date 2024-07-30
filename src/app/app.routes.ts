@@ -17,5 +17,15 @@ export const routes: Routes = [
         path: 'services',
         loadChildren: () =>
             import("./components/services/services.route").then((r) => r.testRoutes),
-    }
+    },
+    {
+        path: 'success-cases',
+        loadComponent: () =>
+            import("./components/success-cases/succes-cases/succes-cases.component").then((c) => c.SuccesCasesComponent),
+    },
+    {
+        path: 'success-case/:id',
+        loadComponent: () =>
+            import("./components/success-cases/success-case/success-case.component").then((c) => c.SuccessCaseComponent),
+    },
 ];

@@ -1,27 +1,10 @@
 <app-service-item></app-service-item>
-<!-- <div style="position: relative;">
-    <div style="background-color: red; position: sticky; top: 60px; height: 100vh;"></div>
-    <div style="background-color: blue; position: sticky; top: 100px; height: 100vh;"></div>
-    <div style="background-color: green; position: sticky; top: 160px; height: 100vh;"></div>
-</div> -->
-<div class="services__block  services__block-background">
-    <div class="opt__dot center"><span class="circle bg__{{url}}"></span> What’s included</div>
+<div>
+    <app-service-page-item appInViewNew inViewClass="in-view" [activeClass]="'compress'"
+        [elementTop]="310"></app-service-page-item>
+    <app-service-page-item appInViewNew inViewClass="in-view" [activeClass]="'compress'"
+        [elementTop]="330"></app-service-page-item>
+    <app-service-page-item appInViewNew inViewClass="in-view" [activeClass]="'compress'"
+        [elementTop]="350"></app-service-page-item>
 </div>
-
-<div style="margin-top: 100px;">
-    <app-service-page-item [elementTop]="310" appTrackSectionScroll [scrollThresholdTop]="200"
-        [scrollThresholdBottom]="100" activeClass="compress"></app-service-page-item>
-    <app-service-page-item [elementTop]="330" appTrackSectionScroll [scrollThresholdTop]="200"
-        [scrollThresholdBottom]="100" activeClass="compress"></app-service-page-item>
-    <app-service-page-item [elementTop]="350" appTrackSectionScroll [scrollThresholdTop]="200"
-        [scrollThresholdBottom]="100" activeClass="compress"></app-service-page-item>
-    <!-- <app-service-page-item [elementTop]="310"></app-service-page-item>
-    <app-service-page-item [elementTop]="330"></app-service-page-item>
-    <app-service-page-item [elementTop]="350"></app-service-page-item> -->
-</div>
-<app-logos></app-logos>
-
-<div style="margin-bottom: 80px;">
-    <app-wizards></app-wizards>
-</div>
-<app-hover-block></app-hover-block>
+<app-wizards></app-wizards>

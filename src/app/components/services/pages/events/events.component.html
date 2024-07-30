@@ -1,11 +1,17 @@
 <app-service-item></app-service-item>
-<div class="scrollable-container">
-    <div *ngFor="let item of trackedItems; let i = index" [style.position]="'initial'" [style.top.px]="item.top"
-        [style.maxHeight]="item.height" [style.minHeight]="item.height" [style.backgroundColor]="item.color" class="tracked-element" #trackedElement
-        [class.compressed]="item.isCollapsed" [appTrackScroll]="item.top" collapseClass="compressed">
-        <!-- Content here -->
-    </div>
 
 
+<div class="service-items" style="margin-block: 100px;">
+    <app-service-page-item [elementTop]="230" appTrackSectionScroll [scrollThresholdTop]="200"
+        [scrollThresholdBottom]="100" activeClass="highlight"></app-service-page-item>
+    <app-service-page-item [elementTop]="230" appTrackSectionScroll [scrollThresholdTop]="200"
+        [scrollThresholdBottom]="100" activeClass="highlight"></app-service-page-item>
+    <app-service-page-item [elementTop]="250" appTrackSectionScroll [scrollThresholdTop]="200"
+        [scrollThresholdBottom]="100" activeClass="highlight"></app-service-page-item>
 </div>
+<app-logos></app-logos>
+
+
+
+
 <app-wizards></app-wizards>
