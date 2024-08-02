@@ -1,0 +1,131 @@
+.about-local-section {
+  max-width: 635px;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 60px;
+  .__text {
+    text-align: center;
+    font-size: 62px;
+    font-weight: bold;
+    line-height: 90px;
+    color: #666666;
+  }
+  .__title {
+    font-size: 20px;
+    color: #000;
+    margin-top: 10px;
+  }
+  .inner-text {
+    display: block;
+    color: #000;
+  }
+  .__subtext {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      background: linear-gradient(to top, white, transparent);
+      pointer-events: none;
+    }
+  }
+}
+.founter-section {
+  border-top: 1px solid #484848;
+  background-color: #000;
+  min-height: 100vh;
+  //   padding-block: 35px;
+  display: flex;
+  align-items: stretch;
+  .founder__side {
+    padding-block: 70px;
+    padding-left: 120px;
+    max-width: calc(100vw - 200px);
+    min-width: calc(100vw - 200px);
+    .__title {
+      color: #666666;
+      font-size: 36px;
+      margin-bottom: 60px;
+      display: block;
+    }
+    .founder__avatar {
+      .avatar__info {
+        padding-left: 50px;
+        .__name {
+          color: #fff;
+          font-size: 32px;
+        }
+        .__description {
+          max-width: 60%;
+          color: #a1a1a1;
+          font-size: 16px;
+          display: block;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .slider__side {
+    background-color: white;
+    // min-width: 500px;
+    border-radius: 2px;
+    padding-left: 80px;
+    .slides__text {
+        font-size: 36px;
+        color: #000;
+    }
+    .slides__img {
+        height: 48px;
+        width: 56px;
+        min-height: 48px;
+        min-width: 56px;
+    }
+  }
+  .slides__block {
+    margin-left: 100px;
+    // flex-basis: 0 1 33%;
+    .slide__items {
+        min-width: 550px;
+    }
+  }
+}
+.also__title {
+  font-weight: bold;
+  color: #767676;
+  font-size: 36px;
+  .inner__text {
+    color: #000;
+  }
+}
+.also__subtext {
+  font-size: 16px;
+  color: #767676;
+  display: block;
+  margin-top: 8px;
+}
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px; /* Change the width if needed */
+    height: 8px; /* For horizontal scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: gray; /* Black background */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Almost invisible thumb */
+    border-radius: 4px; /* Rounded corners */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Slightly more visible on hover */
+  }
+}

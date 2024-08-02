@@ -19,6 +19,16 @@ export const routes: Routes = [
             import("./components/services/services.route").then((r) => r.testRoutes),
     },
     {
+        path: 'about',
+        loadComponent: () =>
+            import("./components/about/about/about.component").then((c) => c.AboutComponent),
+    },
+    {
+        path: 'about-inner',
+        loadComponent: () =>
+            import("./components/about/about-inner/about-inner.component").then((c) => c.AboutInnerComponent),
+    },
+    {
         path: 'success-cases',
         loadComponent: () =>
             import("./components/success-cases/succes-cases/succes-cases.component").then((c) => c.SuccesCasesComponent),

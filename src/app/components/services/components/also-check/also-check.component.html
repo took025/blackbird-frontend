@@ -1,17 +1,29 @@
 <div class="check__section h-100">
-    <div class="__topside">
-        <span class="__title">Also <strong> check...</strong></span>
-        <span class="__text">Other beautiful services</span>
-    </div>
-    <div class="blocks w-full grid grid-cols-2 gap-4">
-        <a class="content__items service " *ngFor="let item of services" [routerLink]="['/services', item?.name]">
-            <div class="flex">
-                {{item?.name}}
-                <img class="__small-arrow" src="../../../../assets/img/navigations/nav-arrow.svg" alt="">
-            </div>
-            <span class="__subtext block"> {{item?.title}}</span>
-        </a>
-        <!-- <div class="content__items service ">
+  @if (hasHeader) {
+  <div class="__topside">
+    <span class="__title">Also <strong> check...</strong></span>
+    <span class="__text">Other beautiful services</span>
+  </div>
+  }
+  <div class="blocks w-full grid grid-cols-2 gap-4">
+    <ng-content></ng-content>
+
+    <a
+      class="content__items service"
+      *ngFor="let item of services"
+      [routerLink]="['/services', item?.name]"
+    >
+      <div class="flex">
+        {{ item?.name }}
+        <img
+          class="__small-arrow"
+          src="../../../../assets/img/navigations/nav-arrow.svg"
+          alt=""
+        />
+      </div>
+      <span class="__subtext block"> {{ item?.title }}</span>
+    </a>
+    <!-- <div class="content__items service ">
             <div class="flex">
                 marketing
                 <img class="__small-arrow" src="../../../../assets/img/navigations/nav-arrow.svg" alt="">
@@ -32,5 +44,5 @@
             </div>
             <span class="__subtext block"> lorem ipsum was here 10 min ago</span>
         </div> -->
-    </div>
+  </div>
 </div>

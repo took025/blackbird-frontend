@@ -1,0 +1,83 @@
+<section class="about-local-section">
+  <span class="__text"
+    >Your local <span class="inner-text">[Business partner]</span></span
+  >
+  <div class="flex items-center flex-col mt-14 mb-9">
+    <img src="../../../../assets/img/navigations/nav-bird.svg" alt="" />
+    <span class="__title">Who We Are</span>
+  </div>
+  <div class="__subtext text-center relative">
+    When you run your hand along the weathered, amber-hued wooden pillars or
+    when you're enveloped in the delightful scent of wooden structures, have you
+    ever considered the mountains where the trees grew? Well-maintained forests
+    nurture essential nutrients and minerals for all forms of life, which
+    eventually flow downstream through rivers into the sea. Healthy forests are
+    essential to sustain a bountiful land and sea where both people and animals
+    can thrive
+  </div>
+  <div class="py-20">
+    <img src="../../../../assets/img/about/banner.svg" alt="" />
+  </div>
+</section>
+
+<app-logos></app-logos>
+<section class="founter-section">
+  <div class="overflow-auto flex items-stretch py-9 scrollbar">
+    <div class="founder__side">
+      <span class="__title">Founders</span>
+      <div class="founder__avatar">
+        <div class="flex items-end">
+          <img src="../../../../assets/img/wizard.svg" alt="" />
+          <div class="avatar__info">
+            <span class="__name">Tamuna Rostiashvili</span>
+            <span class="__description">
+              When you run your hand along the weathered, amber-hued wooden
+              pillars or when you're enveloped in the delightful scent of wooden
+              structures, have you ever considered the mountains where the trees
+              grew? Well-maintained forests nurture essential nutrients and
+              minerals for all forms of
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider__side flex items-center">
+      <div class="flex flex-col items-center">
+        <img
+          class="slides__img"
+          src="../../../../assets/img/about/slides.svg"
+          alt=""
+        />
+        <span class="slides__text">Team</span>
+      </div>
+      <div class="slides__block flex">
+        @for ( item of slides; track item ; ) {
+        <div class="slide__items flex items-end">
+          <img src="../../../../assets/img/wizard.svg" alt="" />
+          <div class="slide__info flex flex-col justify-between h-full pl-4">
+            <span class="slide__index">0{{item.id}}</span>
+            <div class="flex flex-col">
+              <span class="__name mt-1.5 block">{{ item.name }}</span>
+              <span class="__description">
+                {{ item.job }}
+              </span>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+    <app-branding></app-branding>
+</section>
+
+<app-also-check [hasHeader]="false">
+  <div class="flex flex-col">
+    <span class="also__title"
+      >Our <span class="inner__text"> Services</span></span
+    >
+    <span class="also__subtext">Other beautiful services</span>
+  </div>
+</app-also-check>
