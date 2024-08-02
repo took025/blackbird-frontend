@@ -1,4 +1,5 @@
 /* footer.component.css */
+@use '../../../assets/styles/responsive.scss' as m;
 .footer__up {
     height: 300px;
     background-image: url("../../../assets/img/footer.svg");
@@ -13,5 +14,28 @@
     &.rounded {
         border-top-left-radius: 75px;
         border-top-right-radius: 75px;
+        @include m.respond-to(small) {
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+          }
+    }
+    .top__side {
+        @include m.respond-to(medium) {
+            flex-direction: column;
+          }
+    }
+    .right__side {
+        .title {
+            font-size: 16px;
+            color: #838383;
+            margin-bottom: 12px;
+        }
+        .body__text {
+            margin-bottom: 10px;
+            display: block;
+        }
+        @include m.respond-to(medium) {
+            margin-top: 90px;
+          }
     }
 }

@@ -60,7 +60,7 @@ export class TrackScrollDirective {
         const distanceFromBottom = window.innerHeight - rect.bottom;
 
         // Logging for debugging purposes
-        console.log(`Distance from bottom: ${distanceFromBottom}, Element bottom threshold: ${this.elementBottom}`);
+        // console.log(`Distance from bottom: ${distanceFromBottom}, Element bottom threshold: ${this.elementBottom}`);
 
         if (distanceFromBottom >= Number(this.elementBottom) - 300) {
             this.renderer.addClass(this.el.nativeElement, this.showElementClass);

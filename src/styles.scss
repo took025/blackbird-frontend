@@ -1,67 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@use "./assets/styles/responsive.scss" as m;
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 @import "./assets/styles/fonts.scss";
 @import "./assets/styles/base.scss";
-
 body {
-    margin: 0;
-    // padding-top: 121px;
+  margin: 0;
+  // padding-top: 121px;
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .btn {
-    height: 44px;
-    padding: 8px 25px 0 25px;
-    border-radius: 45px;
-    display: flex;
+  height: 44px;
+  padding: 0 25px;
+  border-radius: 45px;
+  display: flex;
+  align-items: center;
+  @include m.respond-to(small) {
+    font-size: 12px;
+  }
 
-    &.btn-secondary {
-        border: 1px solid #484848;
+  &.btn-secondary {
+    border: 1px solid #484848;
+  }
+  &.dark-btn {
+    color: white;
+    border: 1px solid #838383;
+    background-color: #1a1a1a;
+ 
+    .point {
+      background-color: #591e7f;
+      width: 9px;
+      height: 9px;
+      border-radius: 100%;
+      // margin-top: 8px;
+      margin-right: 8px;
     }
-    &.dark-btn {
-        color: white;
-        border: 1px solid #838383;
-        background-color: #1a1a1a;
-        .point {
-            background-color: #591e7f;
-            width: 9px;
-            height: 9px;
-            border-radius: 100%;
-            margin-top: 8px;
-            margin-right: 8px;
-        }
-    }
-    &.see__more {
-        background-color: #B80E45;
-        color: white;
-        font-size: 16px;
-        text-transform: uppercase;
-        border-radius: 2px;
-    }
-    &.md {
-        height: 30px;
-    }
+  }
+  &.see__more {
+    background-color: #b80e45;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  &.md {
+    height: 30px;
+  }
 }
 
 .default__grid {
-    padding-left: 60px;
-    padding-right: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 .h-100 {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 .center {
-    display: flex;
-    max-width: 1350px;
-    margin: 0 auto;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+  display: flex;
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
