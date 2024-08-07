@@ -7,17 +7,17 @@ import {
   OnInit,
   PLATFORM_ID,
   Renderer2,
+  signal,
   ViewChild,
 } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { filter } from "rxjs";
 
 
 @Component({
   selector: "app-footer",
   standalone: true,
-  imports: [NgStyle, NgClass ,NgIf],
+  imports: [NgStyle, NgClass, NgIf],
   templateUrl: "./footer.component.html",
   styleUrl: "./footer.component.scss",
 })
@@ -28,6 +28,8 @@ export class FooterComponent {
   backgroundSize: string = "200px";
   isBrowser: boolean = false;
   showfotterUpSide: boolean = true;
+  currentRoute = '';
+
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
     private el: ElementRef,
@@ -76,6 +78,21 @@ export class FooterComponent {
         this.showfotterUpSide = true;
       }
     })
+  }
+
+  ngAfterViewInit(): void {
+    this.router.events.subscribe((route) => {
+      if (route instanceof NavigationStart) {
+        console.log(route.url);
+        this.currentRoute = route.url
+      }
+    })
+    // setTimeout(() => {
+
+    // console.log(this.router.url.split('/').pop());
+    // }, 0);
+
+
   }
 
 

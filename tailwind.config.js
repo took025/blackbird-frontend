@@ -29,12 +29,19 @@ module.exports = {
         borderRadius: {
             'rounded-75': '75pxpx',
         },
+        screens: {
+            'sm': '576px',
+            'md': '768px',
+            'lg': '992px',
+            'xl': '1200px',
+            '2xl': '1536px',
+        },
         colors: {
             'regal-blue-2': '#243c5a',
             'black': '#000',
             'white': '#fff',
             'purple': '#B80E45',
-          },
+        },
     },
     plugins: [],
 }

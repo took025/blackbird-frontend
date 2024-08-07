@@ -28,6 +28,7 @@ import { HeaderComponent } from './components/home-page/header/header.component'
     FooterComponent,
     HeaderComponent,
     NgIf,
+    NgClass
     // StickyComponentComponent,
     // NgFor,
     // NgIf,
@@ -48,20 +49,16 @@ export class AppComponent {
   isBrowser: boolean = false;
   scrollTopSignal = signal(0);
   scrollPercentage: number = 0;
+  loader = false;
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
     @Inject(PLATFORM_ID) platformId: Object,
     private service: InViewService,
-    private router : Router,
+    private router: Router,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
-    // this.router.events.subscribe((event) => {
-    //   if (event instanceof NavigationEnd) {
-    //     this.gotoTop();
-    //   }
-    // });
   }
 
   ngOnInit(): void {
@@ -69,7 +66,9 @@ export class AppComponent {
   }
 
   ngAfterViewInit(): void {
-    console.log('loaded');
+    setTimeout(() => {
+      this.loader = true;
+    }, 2000);
   }
 
   @HostListener('window:scroll', ['$event'])

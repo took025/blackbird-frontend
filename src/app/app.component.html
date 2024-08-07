@@ -1,17 +1,23 @@
+<div class="loader" [ngClass]="{'hidden': loader}">
+
+</div>
 <div id="homePage"></div>
+@if (loader) {
+<div class="main__block">
+  <app-header />
+  <router-outlet />
 
-<app-header />
-<router-outlet />
-
-<footer>
-  <app-footer></app-footer>
-  <div class="scroll__up">
-    <div class="progress-container cursor-pointer" (click)="gotoTop()" *ngIf="scrollPercentage">
+  <footer>
+    <app-footer></app-footer>
+    <!-- <div class=""> -->
+    <div class="scroll__up cursor-pointer" (click)="gotoTop()" *ngIf="scrollPercentage">
       <svg class="progress-circle" viewBox="0 0 120 120">
         <circle class="track" cx="60" cy="60" r="50"></circle>
         <circle class="filled" cx="60" cy="60" r="50" stroke-dasharray="0 314"
           [style.strokeDasharray]="(scrollPercentage / 100) * 314 + ' 314'"></circle>
       </svg>
+      <!-- </div> -->
     </div>
-  </div>
-</footer>
+  </footer>
+</div>
+}

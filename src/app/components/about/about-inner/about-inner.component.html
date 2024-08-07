@@ -1,1 +1,124 @@
-<p>about-inner works!</p>
+<section class="about-inner">
+    <div class="center flex-col">
+        <div>
+            <a class="head__title flex items-center cursor-pointer" routerLink="/about"> 
+                <img  class="block mr-3" src="../../../../assets/img/back.svg"
+                    alt="">
+                back
+            </a>
+            <p class="sec__title couturier-Regular">Our Branding philosphy</p>
+        </div>
+        <div class="brand__blocks">
+            <div class="__left">
+                <span class="__title helvetica">[SYMBOL]</span>
+                <span class="__text helvetica">
+                    Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and adaptability.
+                    The Blackbird is not only a visual emblem but also a reflection of our core values and the essence
+                    of
+                    our diverse services.Our brand is represented by the
+                </span>
+            </div>
+            <div class="__right">
+                <img src="../../../../assets/img/about/brand1.svg" alt="">
+            </div>
+        </div>
+        <div class="brand__blocks">
+            <div class="__left">
+                <span class="__title helvetica">[LOGOTYPE]</span>
+                <span class="__text helvetica">
+                    Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and adaptability.
+                    The Blackbird is not only a visual emblem but also a reflection of our core values and the essence
+                    of
+                    our diverse services.Our brand is represented by the
+                </span>
+            </div>
+            <div class="__right">
+                <img src="../../../../assets/img/about/brand2.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <section class="brand-sec">
+        <div class="center flex-col">
+            <p class="__title helvetica">
+                [BRAND IDENTITY ELEMENTS]
+            </p>
+            <div class="flex justify-between items-end">
+                <div class="__left">
+                    <div class="birds__seletion">
+                        <div class="list__item" *ngFor="let item of brandBirds"
+                            [ngClass]="{'active': activeBird === item.name}" (click)="activeItem(item)">
+                            <div class="__list" [ngStyle]="getStyles(item)"></div>
+                            <span class="__text block helvetica">{{item.name}}</span>
+                        </div>
+                    </div>
+
+                    <p class="__subText helvetica">
+                        Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and
+                        adaptability.Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and
+                        adaptability.
+                        The Blackbird is not only a visual emblem but also a reflection of our core values and the
+                        essence of our diverse services.Our brand is represented by
+                    </p>
+                    <p class="__subText helvetica">
+                        Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and
+                        adaptability.Our brand is represented by the Blackbird, a symbol of mystery, intelligence, and
+                        adaptability.
+                    </p>
+                </div>
+
+                <div class="big__img">
+                    <img src="../../../../assets/img/services/big-{{activeBird}}.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="colors_sec">
+        <div class="">
+            <div class="top__side">
+                <p class="__title helvetica">[COLORS]</p>
+                <p class="__text helvetica">Blackbird’s brand colors find their roots in Modernism, capturing the essence of its
+                    revolutionary approach to design.
+                    This international homage to Mod- ernism not only pays tribute to design history but also aligns
+                    Blackbird with a timeless aesthetic.</p>
+            </div>
+            <div class="colors__block">
+                <div class="__list __list-{{i}}" *ngFor="let item of colorsArray; let i = index"
+                    [ngStyle]="{'background-color': item.color}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rotate__block __black">
+        <div class="center flex-col">
+            <div class="top__side">
+                <span class="__left helvetica">[TYPOGRAPHY]</span>
+                <span class="flex w-full justify-end __right helvetica">Regular/Semibold/Bold/Black</span>
+            </div>
+            <div class="rotated__effect items-center">
+                <span class="rot__text __black helvetica">DISPLAY</span>
+                <div class="flex flex-col">
+                    <span class="main__text __black couturier-Regular">COUTURIER</span>
+                    <span class="main__text __black __sec couturier-Regular">COUTURIER</span>
+                    <span class="main__text __black __thr couturier-Regular">COUTURIER</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rotate__block">
+        <div class="center flex-col">
+            <span class="flex w-full justify-end helvetica">Regular/Semibold/Bold/Black</span>
+            <div class="rotated__effect">
+                <span class="rot__text helvetica">BODY</span>
+                <span class="main__text helvetica">HELVETICA NUEUE</span>
+            </div>
+        </div>
+    </section>
+    <section class="also__check" style="background-color: #F8F6F2;">
+        <app-also-check [hasHeader]="false">
+            <div class="flex flex-col">
+                <span class="also__title helvetica">Our <span class="inner__text"> Services</span></span>
+                <span class="also__subtext helvetica">Other beautiful services</span>
+            </div>
+        </app-also-check>
+    </section>
+</section>

@@ -13,15 +13,17 @@
       *ngFor="let item of services"
       [routerLink]="['/services', item?.name]"
     >
-      <div class="flex">
-        {{ item?.name }}
+      <div class="flex ">
+        <span  class="font-bold helvetica text-xl">
+          {{ item?.name }}
+        </span>
         <img
           class="__small-arrow"
           src="../../../../assets/img/navigations/nav-arrow.svg"
           alt=""
         />
       </div>
-      <span class="__subtext block"> {{ item?.title }}</span>
+      <span class="__subtext block helvetica "> {{ item?.title }}</span>
     </a>
     <!-- <div class="content__items service ">
             <div class="flex">

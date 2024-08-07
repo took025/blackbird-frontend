@@ -359,34 +359,6 @@ $transition: 0.5s;
           transition: 0.3s;
         }
       }
-
-      .__socials {
-        .social__items {
-          overflow: hidden;
-          transition: 0.3s;
-          display: flex;
-          flex-direction: column;
-          height: 24px;
-          cursor: pointer;
-          margin-bottom: 8px;
-
-          .__down,
-          .__up {
-            transition: inherit;
-          }
-
-          &:hover {
-            .__up {
-              margin-top: -24px;
-            }
-
-            .__down {
-              color: #b80e45;
-            }
-          }
-        }
-      }
-
       &::after {
         content: "";
         position: absolute;

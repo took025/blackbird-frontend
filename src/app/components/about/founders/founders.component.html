@@ -1,0 +1,48 @@
+<section class="founter-section">
+    <div class="overflow-auto flex items-stretch py-9 scrollbar horizontal-scroll-container">
+      <div class="founder__side">
+        <span class="__title helvetica">Founders</span>
+        <div class="founder__avatar">
+          <div class="flex items-end">
+            <img src="../../../../assets/img/wizard.svg" alt="" />
+            <div class="avatar__info">
+              <span class="__name helvetica">Tamuna Rostiashvili</span>
+              <span class="__description helvetica">
+                When you run your hand along the weathered, amber-hued wooden
+                pillars or when you're enveloped in the delightful scent of wooden
+                structures, have you ever considered the mountains where the trees
+                grew? Well-maintained forests nurture essential nutrients and
+                minerals for all forms of
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider__side flex items-center">
+        <div class="flex flex-col items-center">
+          <img
+            class="slides__img"
+            src="../../../../assets/img/about/slides.svg"
+            alt=""
+          />
+          <span class="slides__text helvetica">Team</span>
+        </div>
+        <div class="slides__block flex">
+          @for ( item of slides; track item ; ) {
+          <div class="slide__items flex items-end">
+            <img src="../../../../assets/img/wizard.svg" alt="" />
+            <div class="slide__info flex flex-col justify-between h-full pl-4">
+              <span class="slide__index helvetica">0{{item.id}}</span>
+              <div class="flex flex-col">
+                <span class="__name mt-1.5 block couturier-Regular">{{ item.name }}</span>
+                <span class="__description helvetica">
+                  {{ item.job }}
+                </span>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>

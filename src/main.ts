@@ -2,13 +2,22 @@ import { bootstrapApplication, provideClientHydration } from "@angular/platform-
 import { appConfig } from "./app/app.config";
 import { AppComponent } from "./app/app.component";
 import { provideAnimations } from "@angular/platform-browser/animations";
-import { provideRouter } from "@angular/router";
+import { provideRouter, withInMemoryScrolling, InMemoryScrollingOptions } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
 import { routes } from "./app/app.routes";
 
+const scrollConfig: InMemoryScrollingOptions = {
+  scrollPositionRestoration: 'top',
+  anchorScrolling: 'enabled',
+};
+
+const inMemoryScrollingFeature = withInMemoryScrolling(scrollConfig);
+
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes),
-  provideClientHydration(),
-  { provide: APP_BASE_HREF, useValue: '/' },
-  provideAnimations()],
+  providers: [
+    provideRouter(routes, inMemoryScrollingFeature),
+    provideClientHydration(),
+    { provide: APP_BASE_HREF, useValue: '/' },
+    provideAnimations()
+  ],
 }).catch((err) => console.error(err));
